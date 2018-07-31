@@ -1,0 +1,28 @@
+.header-section{
+    height:60px;
+    background:#1b1e1e;
+}
+.main-content{
+    background: #272727;
+}
+#loginpop a span {
+    color: #fff;
+}
+#loginpop a :hover {
+    color: #e52325; 
+}
+.profile-details {
+    padding: 0 0;
+}
+.sticky-left-side {
+    background:#000;
+}
+#loginpop{
+    float:right;
+}
+li > a:focus {
+    background:#292929;
+}
+li > a:active {
+    background:#292929;
+}

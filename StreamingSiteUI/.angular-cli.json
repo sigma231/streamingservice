@@ -1,0 +1,83 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "streaming-site-ui"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.css",
+        "assets/css/bootstrap.css",
+        "assets/css/style.css",
+        "assets/css/icon-font.css",
+        "assets/css/popuo-box.css"
+      ],
+      "scripts": [
+        "assets/js/jquery-2.1.4.js",
+        "assets/js/jquery.magnific-popup.js",
+        "assets/js/responsiveslides.min.js",
+        "assets/js/classie.js",
+        "assets/js/uisearch.js",
+        "assets/js/mediaelement-and-player.min.js",
+        "assets/js/responsiveslides.min.js",
+        "assets/js/jquery.magnific-popup.js",
+        "assets/js/jquery.jplayer.min.js",
+        "assets/js/jplayer.playlist.min.js",
+        "assets/js/jquery.flexisel.js",
+        "assets/js/jquery.nicescroll.js",
+        "assets/js/scripts.js",
+        "assets/js/bootstrap.js",
+        "../node_modules/owl.carousel/dist/owl.carousel.js",
+        "../node_modules/owl.carousel/dist/assets/owl.theme.default.css"
+        
+
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "src/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "component": {}
+  }
+}

@@ -1,6 +1,6 @@
 .header-section{
     height:60px;
-    background:#1b1e1e;
+    background:rgba(27, 30, 30, 0.5 );
 }
 .main-content{
     background: #272727;
@@ -26,3 +26,122 @@ li > a:focus {
 li > a:active {
     background:#292929;
 }
+
+div.col-md-4.login-pop {
+    right: 0;
+    position:fixed;
+    width:400px;
+}
+
+#loginButton span {
+    width:100px;
+}
+#registerButton span {
+    width:105px;
+}
+
+
+
+nav.menubar{
+  padding:5px;
+  font:400 22px 'Josefin Sans', serif;
+  position: fixed;
+  top: 0;left: 0;
+  transition: all .3s ease-in-out;
+  border-bottom:2px solid transparent;
+  margin-top: 10px;
+}
+
+nav.menubar ul{
+  text-align:center;
+  letter-spacing:.1px;
+}
+
+nav.menubar ul li{
+  display:inline;
+  padding:0 10px;
+}
+.main-nav>li+li {
+    margin-left: 30px
+  }
+  
+  .main-nav>li>a {
+    padding: 20px 0px;
+  }
+  
+  .main-nav>li>a:hover, .main-nav>li>a:focus, .main-nav>li.active>a {
+    color: #D10024;
+    background-color: transparent;
+  }
+  
+  .main-nav>li>a:after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: #D10024;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+  }
+  
+  .main-nav>li>a:hover:after, .main-nav>li>a:focus:after, .main-nav>li.active>a:after {
+    width: 100%;
+  }
+  
+  .header-ctn li.nav-toggle {
+    display: none;
+  }
+  
+  /*----------------------------*\
+      responsive nav
+  \*----------------------------*/
+  
+  @media only screen and (max-width: 991px) {
+    .header-ctn .menu-toggle {
+      display: inline-block;
+    }
+    #responsive-nav {
+      position: fixed;
+      left: 0;
+      top: 0;
+      background: #15161D;
+      height: 100vh;
+      max-width: 250px;
+      width: 0%;
+      overflow: hidden;
+      z-index: 22;
+      padding-top: 60px;
+      -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+      transform: translateX(-100%);
+      -webkit-transition: 0.2s all;
+      transition: 0.2s all;
+    }
+    #responsive-nav.active {
+      -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+      transform: translateX(0%);
+      width: 100%;
+    }
+    .main-nav {
+      margin: 60px;
+      float: none;
+    }
+    .main-nav>li {
+      display: block;
+      float: none;
+    }
+    .main-nav>li+li {
+      margin-left: 0px;
+    }
+    .main-nav>li>a {
+      padding: 15px;
+      color: #FFF;
+    }
+  }
+  a {
+      color:#ffffff;
+  }
+  .navbar-nav {
+      margin-left:60px;
+  }

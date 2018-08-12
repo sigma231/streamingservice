@@ -8,7 +8,8 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "typedoc": "typedoc --mode modules -module commonjs --exclude **/*.spec.ts --out docs/typedoc src/app"
   },
   "private": true,
   "dependencies": {
@@ -21,12 +22,15 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^2.2.2",
     "core-js": "^2.4.1",
     "jquery": "^3.3.1",
     "ngx-bootstrap": "^3.0.1",
     "ngx-owl-carousel": "^2.0.7",
-    "rxjs": "^5.5.6",
+    "rxjs": "^6.2.2",
+    "rxjs-compat": "^6.2.2",
     "script-loader": "^0.7.2",
+    "video.js": "^7.1.0",
     "videogular2": "^6.3.0",
     "zone.js": "^0.8.19"
   },
@@ -34,6 +38,7 @@
     "@angular/cli": "~1.7.4",
     "@angular/compiler-cli": "^5.2.0",
     "@angular/language-service": "^5.2.0",
+    "@types/core-js": "^2.5.0",
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
@@ -48,6 +53,7 @@
     "protractor": "~5.1.2",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
+    "typedoc": "^0.11.1",
     "typescript": "~2.5.3"
   }
 }

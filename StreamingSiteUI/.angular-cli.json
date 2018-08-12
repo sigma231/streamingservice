@@ -23,7 +23,8 @@
         "assets/css/bootstrap.css",
         "assets/css/style.css",
         "assets/css/icon-font.css",
-        "assets/css/popuo-box.css"
+        "assets/css/popuo-box.css",
+        "../node_modules/videogular2/fonts/videogular.css"
       ],
       "scripts": [
         "assets/js/jquery-2.1.4.js",
@@ -41,7 +42,9 @@
         "assets/js/scripts.js",
         "assets/js/bootstrap.js",
         "../node_modules/owl.carousel/dist/owl.carousel.js",
-        "../node_modules/owl.carousel/dist/assets/owl.theme.default.css"
+        "../node_modules/owl.carousel/dist/assets/owl.theme.default.css",
+        "../node_modules/video.js/dist/video.min.js"
+        
         
 
       ],

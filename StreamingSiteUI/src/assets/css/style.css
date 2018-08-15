@@ -1245,7 +1245,7 @@ fieldset#body {
 }
 .login-pop {
     width: 20%;
-       margin-top: 0.9em;
+    margin-top: 0.3em;
     margin-left: 3%;
 }
 .profile_details {
@@ -2213,7 +2213,7 @@ li.list-group-item1 {
     font-weight: normal;
     background: none;
     border: 1px solid #E6E4E4;
-    color: #D2D1D1;
+    color: #6B6B6B;
     outline: none;
     font-size: 14px;
     margin-top: 11px;

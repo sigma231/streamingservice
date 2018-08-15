@@ -19,4 +19,12 @@ export class AuthService {
       return response;
     })
   }
+  signup(signupForm: any){
+    console.log("signup Form = " + signupForm);
+
+    return this.http.post(this.api_url + "/register", signupForm).map(response => {
+      console.log(response);
+      return response;
+    })
+  }
 }

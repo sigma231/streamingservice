@@ -139,14 +139,21 @@
 										  
 											   <div class="col-md-4 login-pop">
 												
-												<div *ngIf="loginButton" id="loginpop" style="margin-top:5px;"> 
+												<div *ngIf="loginButton" style="margin-top:5px;"> 
 													
-														<a href="#" id="registerButton" class="col-md-6" data-toggle="modal" data-target="#myModal6"><span>Sign Up</span></a>
-													<a class="col-md-6" href="#" id="loginButton" data-toggle="modal" data-target="#myModal5"><span>Login <i class="arrow glyphicon glyphicon-chevron-right"></i></span></a>
+														<!-- <a href="#" id="registerButton" class="col-md-6" data-toggle="modal" data-target="#myModal6"><span>Sign Up</span></a> -->
+													<a class="col-md-6" href="#" id="loginButton" data-toggle="modal" data-target="#myModal5"><span><h3>Login</h3> <i class="arrow glyphicon glyphicon-chevron-right"></i></span></a>
 												
 												</div>
+												<div class="dropdown">
 												<div *ngIf="logged_in" id="loginpop" id="loginpop">
-													<h3 style="color:white;">{{userName}}</h3>
+													<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><h3 type="button"  style="color:white;"><span class="glyphicon glyphicon-user"></span> {{userName}}</h3></button>
+												</div>
+												<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+													<a class="dropdown-item" href="#">Action</a>
+													<a class="dropdown-item" href="#">Another action</a>
+													<a class="dropdown-item" href="#">Something else here</a>
+												</div>
 												</div>
 												
 											  </div>

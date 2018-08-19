@@ -39,7 +39,11 @@ div.col-md-4.login-pop {
 #registerButton span {
     width:105px;
 }
-
+button:focus {outline:0;}
+button {
+  background: none;
+  border:none;
+}
 
 
 nav.menubar{

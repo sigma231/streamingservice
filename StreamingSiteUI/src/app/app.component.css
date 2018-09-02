@@ -34,7 +34,7 @@ div.col-md-4.login-pop {
 }
 
 #loginButton span {
-    width:100px;
+    width:110px;
 }
 #registerButton span {
     width:105px;
@@ -149,3 +149,11 @@ nav.menubar ul li{
   .navbar-nav {
       margin-left:60px;
   }
+  #logoutButton:hover {
+    color:#D10024;
+  }
+  #logoutButton {
+    color:white;
+  }
+
+  

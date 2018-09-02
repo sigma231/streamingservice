@@ -1,9 +1,14 @@
+<div class="image-container" *ngIf="dataLoadedStatus">
+	<p class="image-holder">
+	<img src="assets/images/loader.gif" />
+	</p>
+	</div>
 <div class="banner-section">
   
   <carousel class="carousel-fade">
     <slide>
       <img src="assets/images/11.jpg" alt="first slide" style="display: block; width: 100%;">
-      <a class="trend" href="single.html">TRENDING</a>
+      
       <div class="banner-info">
 
         <h3>Let Your Home</h3>
@@ -34,7 +39,17 @@
   <div class="inner-content">
 
     <div class="music-left">
+        <div class="owl-carousel">
+          <div class="item col-md-3">
+            
+          </div>
+          <div class="item col-md-3">
 
+          </div>
+          <div class="item col-md-3">
+
+          </div>
+        </div>
       <!--banner-->
 
       <!--//End-banner-->
@@ -52,12 +67,32 @@
           <div class="clearfix"> </div>
         </div>
 
-        <div *ngFor="let media_item of media_listing" class="col-md-3 content-grid" (click) ="openInfoOverlay(media_item.media_name)">
-          <a class="play-icon popup-with-zoom-anim" href="#small-dialog">
-            <img src="http://localhost:8000/api/image/{{media_item.id}}">
-          </a>
 
-        </div>
+        <ngu-carousel
+        [inputs]="carouselTile"
+        (initData)="initDataFn($event)"
+        (carouselLoad)="carouselTileLoad($event)">
+   
+              <ngu-tile NguCarouselItem *ngFor="let media_item of media_listing" class="col-md-4 content-grid content"(click) ="openInfoOverlay(media_item.media_name)">
+              
+                <a class="play-icon popup-with-zoom-anim" href="#small-dialog">
+                  <img src="http://localhost:8000/api/image/{{media_item.id}}">
+                </a>
+                <div class="after tittle-head">
+                  <h4 class="tittle"></h4>
+                  </div>
+                  <div class="content-details fadeIn-top">
+                    <h3>{{media_item.media_name}}</h3>
+                    <p>This is a short description</p>
+                  </div>
+              
+              </ngu-tile>
+              <button NguCarouselPrev class='leftRs'>&lt;</button>
+            <button NguCarouselNext class='rightRs'>&gt;</button>
+            
+      
+      </ngu-carousel>
+        
 
 
 
@@ -67,14 +102,13 @@
       <!--//End-albums-->
       <!--//discover-view-->
 
-      <div class="albums second">
-        <div class="tittle-head">
-          <h3 class="tittle">Discover
-            <span class="new">View</span>
-          </h3>
 
-          <div class="clearfix"> </div>
-        </div>
+
+      <div class="albums second">
+         
+        <button (click)="resetFn()">Reset</button>
+       
+       
         <div class="col-md-3 content-grid">
           <a href="single.html">
             <img src="assets/images/v11.jpg">
@@ -237,14 +271,14 @@
 
 
 <div *ngIf="overlayOpen" class="info-overlay col-md-12" style="position:fixed;top:0;background:rgba(0, 0, 0, 0.864);width:100%;height:100%;z-index:99999;">
-  <div class="exit-button-holder" style="position:fixed;right:15px;top:10px;">
+  <div class="exit-button-holder" style="position:fixed;right:15px;top:10px;z-index:100000">
     <a href="#" (click)="closeInfoOverlay()">
       <h2 style="color:white">
-        <i class="lnr lnr-cross"></i>
+        X
       </h2>
     </a>
   </div>
-  <div class="info-overlay-image" oncontextmenu="return false" style="padding-top:50px;padding-left:50px;">
+  <div class="info-overlay-image" oncontextmenu="return false" style="height:100%;">
       <vg-player>
           <vg-controls>
               <vg-play-pause></vg-play-pause>
@@ -265,7 +299,7 @@
               <vg-fullscreen></vg-fullscreen>
           </vg-controls>
         
-          <video #media [vgMedia]="media" id="singleVideo" preload="auto" crossorigin height="550px">
+          <video #media [vgMedia]="media" id="singleVideo" preload="auto" crossorigin style="height:100%;width:100%">
 
               <source src="{{video_url}}" type="video/mp4" />
             </video>

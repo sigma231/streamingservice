@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   loginButton: boolean = true;
   logged_in: boolean = false
   userName: string;
+  dataLoadedStatus: boolean = true;
   
 
   loginForm: FormGroup;
@@ -63,9 +64,11 @@ export class AppComponent implements OnInit {
         
       }
     });
+    
 
 
   }
+
   login() {
     console.log("Event fired");
     this.loginForm.value['email'] = this.loginForm.value['login_email'];

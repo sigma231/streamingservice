@@ -7,6 +7,7 @@ import { VgControlsModule } from 'videogular2/controls';
 import { OwlModule } from 'ngx-owl-carousel';
 import { Routes, RouterModule } from '@angular/router';
 import { HomepageService } from './homepage.service';
+import { NguCarouselService, NguCarouselModule } from '@ngu/carousel';
 
 
 
@@ -23,9 +24,10 @@ const routes: Routes = [
     OwlModule,
     RouterModule.forChild(routes),
     VgCoreModule,
-    VgControlsModule
+    VgControlsModule,
+    NguCarouselModule
   ],
-  providers: [HomepageService],
+  providers: [HomepageService, NguCarouselService],
   declarations: [HomepageComponent],
   exports: [RouterModule]
 })

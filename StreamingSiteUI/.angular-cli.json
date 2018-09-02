@@ -24,7 +24,8 @@
         "assets/css/style.css",
         "assets/css/icon-font.css",
         "assets/css/popuo-box.css",
-        "../node_modules/videogular2/fonts/videogular.css"
+        "../node_modules/videogular2/fonts/videogular.css",
+        "../node_modules/owl.carousel/dist/assets/owl.carousel.css"
       ],
       "scripts": [
         "assets/js/jquery-2.1.4.js",

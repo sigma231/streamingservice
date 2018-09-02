@@ -4,6 +4,7 @@ import { animate, AUTO_STYLE, state, style, transition, trigger } from '@angular
 import { Router } from '@angular/router';
 import { OwlCarousel } from 'ngx-owl-carousel';
 import { HomepageService } from './homepage.service';
+import { NguCarousel,   NguCarouselStore, NguCarouselService  } from '@ngu/carousel';
 
 declare var $: any;
 
@@ -25,18 +26,37 @@ export class HomepageComponent implements OnInit{
   video_url: string;
   media_listing: any;
   _videoPlayer;
+  dataLoadedStatus: boolean = true;
+  private carouselToken: string;
+  public carouselTileItems: Array<any>;
+  public carouselTile: NguCarousel;
 
   @ViewChild('owlElement') owlElement: OwlCarousel
 
-  constructor(private nav: Router, private home_services: HomepageService) {
+  constructor(private nav: Router, private home_services: HomepageService,private carousel: NguCarouselService) {
 
 
   }
   ngOnInit() {
     
+ 
+    this.carouselTile = {
+      grid: {xs: 1, sm: 1, md: 3, lg: 4, all: 0},
+      slide: 2,
+      speed: 400,
+      
+      point: {
+        visible: true
+      },
+      load: 1,
+      
+      loop: true,
+    }
+  
+ 
+    
     this.getAllMedia();
-
-
+    
   }
   
   getNewReleases() {
@@ -46,7 +66,8 @@ export class HomepageComponent implements OnInit{
     this.home_services.getAllMedia().subscribe(data => {
       this.media_listing = data;
       console.log(data);
-
+      this.dataLoaded();
+    
     })
 
   }
@@ -59,6 +80,24 @@ export class HomepageComponent implements OnInit{
   }
   closeInfoOverlay() {
     this.overlayOpen = false;
+    this.video_url = "";
   }
+  dataLoaded(){
+    this.dataLoadedStatus = false;
+  }
+initDataFn(key: NguCarouselStore) {
+  this.carouselToken = key.token;
+}
+
+resetFn() {
+  this.carousel.reset(this.carouselToken);
+}
+
+moveToSlide() {
+  this.carousel.moveToSlide(this.carouselToken, 2, false);
+}
+
+
+
 
 }

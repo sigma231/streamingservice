@@ -71,7 +71,7 @@
         <ngu-carousel
         [inputs]="carouselTile"
         (initData)="initDataFn($event)"
-        (carouselLoad)="carouselTileLoad($event)">
+        >
    
               <ngu-tile NguCarouselItem *ngFor="let media_item of media_listing" class="col-md-4 content-grid content"(click) ="openInfoOverlay(media_item.media_name)">
               
@@ -102,63 +102,88 @@
       <!--//End-albums-->
       <!--//discover-view-->
 
+      <div class="albums" >
+        <div class="tittle-head">
+          <h3 class="tittle">Political
+          
+          </h3>
 
-
-      <div class="albums second">
-         
-        <button (click)="resetFn()">Reset</button>
-       
-       
-        <div class="col-md-3 content-grid">
-          <a href="single.html">
-            <img src="assets/images/v11.jpg">
-          </a>
-
+          <div class="clearfix"> </div>
         </div>
-        <div class="col-md-3 content-grid">
-          <a href="single.html">
-            <img src="assets/images/v22.jpg">
-          </a>
 
-        </div>
-        <div class="col-md-3 content-grid">
-          <a href="single.html">
-            <img src="assets/images/v33.jpg">
-          </a>
 
-        </div>
-        <div class="col-md-3 content-grid last-grid">
-          <a href="single.html">
-            <img src="assets/images/v44.jpg">
-          </a>
+        <ngu-carousel
+        [inputs]="carouselTile"
+        (initData)="initDataFn($event)"
+        >
+   
+              <ngu-tile NguCarouselItem *ngFor="let media_item of media_listing" class="col-md-4 content-grid content"(click) ="openInfoOverlay(media_item.media_name)">
+              
+                <a class="play-icon popup-with-zoom-anim" href="#small-dialog">
+                  <img src="http://localhost:8000/api/image/{{media_item.id}}">
+                </a>
+                <div class="after tittle-head">
+                  <h4 class="tittle"></h4>
+                  </div>
+                  <div class="content-details fadeIn-top">
+                    <h3>{{media_item.media_name}}</h3>
+                    <p>This is a short description</p>
+                  </div>
+              
+              </ngu-tile>
+              <button NguCarouselPrev class='leftRs'>&lt;</button>
+            <button NguCarouselNext class='rightRs'>&gt;</button>
+            
+      
+      </ngu-carousel>
+        
 
-        </div>
-        <div class="col-md-3 content-grid">
-          <a href="single.html">
-            <img src="assets/images/v55.jpg">
-          </a>
 
-        </div>
-        <div class="col-md-3 content-grid">
-          <a href="single.html">
-            <img src="assets/images/v66.jpg">
-          </a>
 
-        </div>
-        <div class="col-md-3 content-grid">
-          <a href="single.html">
-            <img src="assets/images/v11.jpg">
-          </a>
 
-        </div>
-        <div class="col-md-3 content-grid last-grid">
-          <a href="single.html">
-            <img src="assets/images/v22.jpg">
-          </a>
-
-        </div>
         <div class="clearfix"> </div>
-      </div>
+      </div> <div class="albums" >
+        <div class="tittle-head">
+          <h3 class="tittle">Comedy
+           
+          </h3>
+
+          <div class="clearfix"> </div>
+        </div>
+
+
+        <ngu-carousel
+        [inputs]="carouselTile"
+        (initData)="initDataFn($event)"
+        >
+   
+              <ngu-tile NguCarouselItem *ngFor="let media_item of media_listing" class="col-md-4 content-grid content"(click) ="openInfoOverlay(media_item.media_name)">
+              
+                <a class="play-icon popup-with-zoom-anim" href="#small-dialog">
+                  <img src="http://localhost:8000/api/image/{{media_item.id}}">
+                </a>
+                <div class="after tittle-head">
+                  <h4 class="tittle"></h4>
+                  </div>
+                  <div class="content-details fadeIn-top">
+                    <h3>{{media_item.media_name}}</h3>
+                    <p>This is a short description</p>
+                  </div>
+              
+              </ngu-tile>
+              <button NguCarouselPrev class='leftRs'>&lt;</button>
+            <button NguCarouselNext class='rightRs'>&gt;</button>
+            
+      
+      </ngu-carousel>
+        
+
+
+
+
+        <div class="clearfix"> </div>
+      </div>  
+
       <!--//discover-view-->
     </div>
 
@@ -272,11 +297,11 @@
 
 <div *ngIf="overlayOpen" class="info-overlay col-md-12" style="position:fixed;top:0;background:rgba(0, 0, 0, 0.864);width:100%;height:100%;z-index:99999;">
   <div class="exit-button-holder" style="position:fixed;right:15px;top:10px;z-index:100000">
-    <a href="#" (click)="closeInfoOverlay()">
+    <button (click)="closeInfoOverlay()" class="exit-button">
       <h2 style="color:white">
         X
       </h2>
-    </a>
+    </button>
   </div>
   <div class="info-overlay-image" oncontextmenu="return false" style="height:100%;">
       <vg-player>

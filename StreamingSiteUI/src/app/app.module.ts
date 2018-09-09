@@ -11,10 +11,14 @@ import { RegisterComponent } from './register/register.component';
 import { DiscoverComponent } from './discover/discover.component';
 import { UserlistComponent } from './userlist/userlist.component';
 import { RecentlyaddedComponent } from './recentlyadded/recentlyadded.component';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { AuthService } from './auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponentComponent } from './dialog-component/dialog-component.component';
+import { AuthguardGuard } from './authguard.guard';
 
 
 @NgModule({
@@ -25,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     UserlistComponent,
     RecentlyaddedComponent,
     UserprofileComponent,
+    DialogComponentComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,9 +38,16 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,  
     AppRoutingModule,
     HomepageModule,
+    MatDialogModule,
+    SweetAlert2Module.forRoot({
+      buttonsStyling: false,
+      customClass: 'modal-content',
+      confirmButtonClass: 'btn btn-primary',
+      cancelButtonClass: 'btn'
+  })
     
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthguardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

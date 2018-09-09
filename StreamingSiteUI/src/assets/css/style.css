@@ -637,11 +637,7 @@ ul.nav li a span {
 .col-md-6.col_1_of_2.span_1_of_2 {
     margin-bottom: 0.6em;
 }
-.main-content {
-    
-    background:#F8F8F8;
-    min-height: 1000px;
-}
+
 .main-content2{
 	min-height: 1250px !important;
 }
@@ -1260,9 +1256,7 @@ a.top-sign {
     font-size: 1.25em;
 }
 /*--albums--*/
-.albums {
-  padding: 4em 0 0 0;
-}
+
 .content-grid img {
     width: 100%;
 }
@@ -1348,7 +1342,7 @@ a.top-sign {
 }
 h3.tittle {
     float: left;
-    font-size: 1.8em;
+    font-size: 1.6em;
     font-weight:700;
     color: #fff;
 }

@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, Validators, ControlContainer } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from './auth/auth.service';
+import Swal from 'sweetalert2';
+
 import * as $ from 'jquery';
 
 
@@ -21,7 +24,7 @@ export class AppComponent implements OnInit {
   loginForm: FormGroup;
   registerForm: FormGroup
 
-  constructor(private auth_service: AuthService) {
+  constructor(private auth_service: AuthService, private nav: Router) {
     const email = new FormControl('', Validators.required);
     const password = new FormControl('', Validators.required);
     const c_password = new FormControl('', Validators.required);
@@ -80,35 +83,29 @@ export class AppComponent implements OnInit {
         localStorage.setItem('user_token', data['success'].token);
         localStorage.setItem('user_name', data['success'].user);
         console.log(localStorage.getItem('user_token'));
+        
         this.userName = data['success'].user;
         this.loginButton = false;
         this.logged_in = true;
+        Swal({
+          title: 'Sign In',
+          text: 'You are now signed in',
+          type: 'success',
+        })
         document.getElementById('exit_button').click();
+        this.nav.navigate(['home']);
+      } else {
+        console.log("failed");
+        Swal({
+          title: 'Log in failed',
+          text: 'Invalid login credentials',
+          type: 'warning',
+        })
       }
-      else{
-        console.log("Login failed. Wrong Username or Password ")
-      }
-    })
+      
+    });
   }
-  signUp(){
-    console.log(this.registerForm.value);
-    this.auth_service.signup(this.registerForm.value).subscribe(data=> {
-      console.log(data);
-      if(data['success']){
-        localStorage.setItem('user_token', data['success'].token);
-        console.log(localStorage.setItem('user_name', data['success'].name));
-        console.log(localStorage.getItem('user_token'));
-        this.userName = data['success'].user;
-        this.loginButton = false;
-        this.logged_in = true;
-        document.getElementById('registration_exit_button').click();
-      }
-      else
-      {
-        console.log("Registration Failed");
-      }
-    })
-  }
+  
   checkLogin(){
     if(localStorage.getItem('user_name')){
       this.logged_in = true;
@@ -120,7 +117,20 @@ export class AppComponent implements OnInit {
     }
   }
   logout(){
-    localStorage.removeItem('user_name');
+    Swal({
+      title: 'Logout?',
+      text: 'Are you sure you want to log out?',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Confirm',
+      cancelButtonText: 'Keep signed in '
+    }).then(result => {
+      localStorage.removeItem('user_name');
+      this.logged_in = false;
+      this.loginButton = true;
+      this.nav.navigate(['register']);
+    }, ()=> console.log('Stay on this page'));
+    //
     
   }
 

@@ -4,11 +4,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component'; 
 import { RecentlyaddedComponent } from './recentlyadded/recentlyadded.component';
 import { DiscoverComponent } from './discover/discover.component';
+import { RegisterComponent } from './register/register.component';
+import { AuthguardGuard } from './authguard.guard' 
 
 const routes: Routes = [
   {
     path:'',
-    redirectTo:  'home-page',
+    redirectTo:  'register',
     pathMatch: 'full'
   },
   {
@@ -22,7 +24,13 @@ const routes: Routes = [
    {
      path: 'discover',
      component: DiscoverComponent
-   }
+   },
+   {
+    path: 'register',
+    component: RegisterComponent,
+    canActivate: [AuthguardGuard]
+   },
+   { path: '**', redirectTo: '' }
 ]
 
 @NgModule({

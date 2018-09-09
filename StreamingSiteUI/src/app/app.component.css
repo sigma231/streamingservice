@@ -1,9 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 .header-section{
     height:60px;
     background:rgba(27, 30, 30, 0.5 );
 }
 .main-content{
     background: #272727;
+    
 }
 #loginpop a span {
     color: #fff;
@@ -16,6 +18,9 @@
 }
 .sticky-left-side {
     background:#000;
+}
+body {
+  font-family: 'Raleway', sans-serif;
 }
 #loginpop{
     float:right;
@@ -155,5 +160,10 @@ nav.menubar ul li{
   #logoutButton {
     color:white;
   }
+  .swal2-popup .swal2-styled.swal2-confirm {
+    background: #D10024; 
+  }
 
-  
+  .nav>li>a {
+    font-family: 'Raleway', 'sans-serif'
+  }

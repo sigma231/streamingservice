@@ -6,6 +6,9 @@ import { OwlCarousel } from 'ngx-owl-carousel';
 import { HomepageService } from './homepage.service';
 import { NguCarousel,   NguCarouselStore, NguCarouselService  } from '@ngu/carousel';
 
+import {MatDialog, MatDialogConfig} from "@angular/material";
+
+
 declare var $: any;
 
 @Component({
@@ -41,7 +44,7 @@ export class HomepageComponent implements OnInit{
     
  
     this.carouselTile = {
-      grid: {xs: 1, sm: 1, md: 3, lg: 4, all: 0},
+      grid: {xs: 1, sm: 1, md: 6, lg: 6, all: 0},
       slide: 2,
       speed: 400,
       
@@ -62,6 +65,8 @@ export class HomepageComponent implements OnInit{
   getNewReleases() {
 
   }
+  
+
   getAllMedia() {
     this.home_services.getAllMedia().subscribe(data => {
       this.media_listing = data;
@@ -73,14 +78,24 @@ export class HomepageComponent implements OnInit{
   }
 
   openInfoOverlay(media_id) {
+
+    
+    console.log(time);    
     this.overlayOpen = true;
     console.log(media_id);
     this.video_url = "http://localhost:8000/api/video/"+ media_id;
+    var time = localStorage.getItem(this.video_url);
+    console.log(time);
+    var video = <HTMLVideoElement>document.getElementById('singleVideo');
+    
 
   }
   closeInfoOverlay() {
+    var video = <HTMLVideoElement>document.getElementById('singleVideo');
+    var time = video.currentTime;
+    console.log(time);
+    localStorage.setItem(this.video_url, time.toString());
     this.overlayOpen = false;
-    this.video_url = "";
   }
   dataLoaded(){
     this.dataLoadedStatus = false;

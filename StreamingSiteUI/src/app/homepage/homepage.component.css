@@ -72,7 +72,18 @@ carousel {
   }
  .tittle {
     font-family: 'MavenPro-Regular';
+    
   }
+  .exit-button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    outline:none;
+  }
+ 
   h1{
     min-height: 200px;
     background-color: #ccc;
@@ -106,6 +117,12 @@ ngu-tile.content-grid.item   {
     padding:0;
     width:32%;
 }
+.content-grid h3 {
+  font-family: 'MavenPro-Regular'
+}
+.content-grid p {
+  font-family: 'MavenPro-Regular' 
+} 
 div.image-container {
     position: fixed;
     top: 0;

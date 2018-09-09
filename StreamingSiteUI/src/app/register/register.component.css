@@ -1,0 +1,335 @@
+
+/* Reset Css */
+html, body, div, form, input, label, ul, li, h1, h2, p{
+    margin: 0;
+    padding: 0;
+      box-sizing: border-box; }
+  
+  ul, li{
+      list-style: none;
+  }
+    
+  img{
+      border: 0;
+  }
+  .ad {
+    font-family: 'Raleway', 'sans-serif';
+  }
+  /* css */
+  html, body{
+        font-family: 'Raleway', 'sans-serif';
+    
+      height: 100%;
+      background: #F4F4F5;
+  }
+  h3 {
+      margin: 0;
+  }
+  
+  /* signup form */
+  /* center css */
+  .main{
+      display: table;
+      width: 100%;
+      height: 100%;
+  }
+  
+  .container{
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle
+  }
+  
+  /* signup */
+  .signup{
+      background: #FFF; 
+      max-width: 700px;
+      margin: 0px auto;
+      position: absolute;
+      right: 0;
+      height:100%;
+      padding: 60px 0;
+      background-image: linear-gradient(-225deg, #121618 0%, #dd1818 100%);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.053), 0 10px 40px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+  }
+  
+  .signup:after{
+      content: " ";
+      display: table;
+      clear: both;
+  }
+  /* from */
+  .signup .form, 
+  .signup .features{
+      display: inline-block;
+      float: left;
+      position: relative;
+      text-align: left;
+  }
+  
+  .signup .form{
+      width: 70%;
+      background: #fff;
+      left: -100px;
+      box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.1);
+      padding: 40px 45px;
+      border-radius: 4px;
+      z-index: 2
+  }
+  
+  .signup .features{
+      width: 30%;
+      left: -80px
+  }
+  
+  
+  /* form */
+  .signup h1{
+      font-size: 36px;
+  }
+  
+  .signup p{
+      font-size: 16px;
+      color: #666;
+      font-weight: 300;
+      padding: 15px 0;
+  }
+  
+  .signup label{
+      display: block;
+  }
+  
+  .signup form{
+      margin-top: 15px;
+  }
+  
+  .signup input{
+      width: 100%;
+      height: 45px;
+      padding: 0 35px;
+      border-radius: 2px;
+      margin-bottom: 10px;
+      border: 1.5px solid #d0d0d0;
+      font-family: 'Raleway', 'sans-serif'; 
+  }
+  
+  .signup input.email{
+      background: url(https://res.cloudinary.com/fazurrehman/image/upload/v1485168692/dailyui/email.png) left 10px center no-repeat;
+  }
+  
+  .signup input.password{
+      background: url(https://res.cloudinary.com/fazurrehman/image/upload/v1485168692/dailyui/password.png) left 5px center no-repeat;
+  }
+  
+  
+  .signup input[type=submit]{
+      text-transform: uppercase;
+      font-weight: 700;
+      border: 0;
+      margin-top: 15px;
+      background-image: linear-gradient(-255deg, #272727 0%, #dd1818 80%, #fe0000 100%);
+      box-shadow: 0 10px 20px rgba(99, 201, 240, 0.1), 0 14px 56px rgba(99, 201, 240, 0.024);
+      color: #fff;
+  
+  }
+  
+  /* features */
+  .features{
+      padding-top: 15px;
+  }
+  
+  .features h3{
+      font-size: 28px;
+      color: #fff;
+      font-weight: 600
+  }
+  
+  .features li{
+      font-weight: 100;
+      font-size: 16px;
+      color: #fff;
+      padding-bottom: 15px;
+      background: url(https://res.cloudinary.com/fazurrehman/image/upload/v1485170272/dailyui/check.png) left top no-repeat;
+      padding-left: 30px;
+      margin-bottom: 5px;
+  }
+  
+  
+  /* plan */
+  .plan{
+      position: absolute;
+      bottom: 0;
+      right: -130px;
+      z-index: 1
+  }
+  
+  
+  
+  
+  
+  
+  .header-section{
+    height:60px;
+    background:rgba(27, 30, 30, 0.5 );
+}
+.main-content{
+    background: #272727;  
+}
+#loginpop a span {
+    color: #fff;
+}
+#loginpop a :hover {
+    color: #e52325; 
+}
+.profile-details {
+    padding: 0 0;
+}
+.sticky-left-side {
+    background:#000;
+}
+#loginpop{
+    float:right;
+}
+li > a:focus {
+    background:#292929;
+}
+li > a:active {
+    background:#292929;
+}
+
+div.col-md-4.login-pop {
+    right: 0;
+    position:fixed;
+    width:400px;
+}
+
+#loginButton span {
+    width:110px;
+}
+#registerButton span {
+    width:105px;
+}
+button:focus {outline:0;}
+button {
+  background: none;
+  border:none;
+}
+
+
+nav.menubar{
+  padding:5px;
+  font:400 22px 'Josefin Sans', serif;
+  position: fixed;
+  top: 0;left: 0;
+  transition: all .3s ease-in-out;
+  border-bottom:2px solid transparent;
+  margin-top: 10px;
+}
+
+nav.menubar ul{
+  text-align:center;
+  letter-spacing:.1px;
+}
+
+nav.menubar ul li{
+  display:inline;
+  padding:0 10px;
+}
+.main-nav>li+li {
+    margin-left: 30px
+  }
+  
+  .main-nav>li>a {
+    padding: 20px 0px;
+  }
+  
+  .main-nav>li>a:hover, .main-nav>li>a:focus, .main-nav>li.active>a {
+    color: #D10024;
+    background-color: transparent;
+  }
+  
+  .main-nav>li>a:after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: #D10024;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+  }
+  
+  .main-nav>li>a:hover:after, .main-nav>li>a:focus:after, .main-nav>li.active>a:after {
+    width: 100%;
+  }
+  
+  .header-ctn li.nav-toggle {
+    display: none;
+  }
+  
+  /*----------------------------*\
+      responsive nav
+  \*----------------------------*/
+  
+  @media only screen and (max-width: 991px) {
+    .header-ctn .menu-toggle {
+      display: inline-block;
+    }
+    #responsive-nav {
+      position: fixed;
+      left: 0;
+      top: 0;
+      background: #15161D;
+      height: 100vh;
+      max-width: 250px;
+      width: 0%;
+      overflow: hidden;
+      z-index: 22;
+      padding-top: 60px;
+      -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+      transform: translateX(-100%);
+      -webkit-transition: 0.2s all;
+      transition: 0.2s all;
+    }
+    #responsive-nav.active {
+      -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+      transform: translateX(0%);
+      width: 100%;
+    }
+    .main-nav {
+      margin: 60px;
+      float: none;
+    }
+    .main-nav>li {
+      display: block;
+      float: none;
+    }
+    .main-nav>li+li {
+      margin-left: 0px;
+    }
+    .main-nav>li>a {
+      padding: 15px;
+      color: #FFF;
+    }
+  }
+  a {
+      color:#ffffff;
+  }
+  .navbar-nav {
+      margin-left:60px;
+  }
+  #logoutButton:hover {
+    color:#D10024;
+  }
+  #logoutButton {
+    color:white;
+  }
+  .swal2-popup .swal2-styled.swal2-confirm {
+    background: #D10024; 
+  }
+
+input ::placeholder {
+    color:gray;
+}

@@ -1,0 +1,36 @@
+
+<div class="main">
+    <div class="container row">
+        <div class="coming-soon-poster col-md-5">
+            <img src="assets/images/coming-soon.jpg" style="width:120%;height:100%;">
+        </div>
+        <div class="signup">
+            <div class="form">
+                <h3>Sign up</h3>
+                <p>Create your account easy with less information</p>
+                <form action="" [formGroup]="registerForm" (ngSubmit)="register()">
+                    
+                    <label><input type="text" placeholder="First Name" class="email" formControlName="first_name"/></label>
+                    <label><input type="text" placeholder="Last Name" class="email" formControlName="second_name"/></label>
+                    <label><input type="email" placeholder="Email" class="email" formControlName="email"/></label>
+                    <label><input type="password" placeholder="Password" class="password" formControlName="password"/></label>
+                    <label><input type="password" placeholder="Confirm Password" class="password" formControlName="c_password"/></label>
+                    <label><input type="submit" value="Create Account" /></label>
+                </form>
+            </div>
+            <div class="features">
+                <h3>Features</h3>
+                <ul>
+                    <li class="ad">100% Free Signup </li>
+                    <li class="ad">Loads of content</li>
+                    <li class="ad">Unlimited Streaming</li>
+                    <li class="ad">Invite Your Friends & Get Discounts</li>
+                </ul>
+            </div>
+
+            <div class="plan">
+                <img src="https://res.cloudinary.com/fazurrehman/image/upload/v1484818922/dailyui/send-msg.png" alt="" />
+            </div>
+        </div>
+    </div>
+</div>

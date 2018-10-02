@@ -14,8 +14,9 @@ declare var $: any;
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css',
-  '../../../node_modules/video.js/dist/video-js.css',],
+  styleUrls: ['./homepage.component.scss',
+  '../../../node_modules/video.js/dist/video-js.css',
+  ],
   encapsulation: ViewEncapsulation.None
   // providers: [
   //   { provide: CarouselConfig, useValue: { interval: 3000, noPause: true, showIndicators: true } }
@@ -37,7 +38,7 @@ export class HomepageComponent implements OnInit{
   @ViewChild('owlElement') owlElement: OwlCarousel
 
   constructor(private nav: Router, private home_services: HomepageService,private carousel: NguCarouselService) {
-
+    
 
   }
   ngOnInit() {

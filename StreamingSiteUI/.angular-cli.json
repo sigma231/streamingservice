@@ -45,9 +45,6 @@
         "../node_modules/owl.carousel/dist/owl.carousel.js",
         "../node_modules/owl.carousel/dist/assets/owl.theme.default.css",
         "../node_modules/video.js/dist/video.min.js"
-        
-        
-
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -81,7 +78,8 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
-    "component": {}
+    "styleExt": "scss",
+    "component": {
+    }
   }
 }

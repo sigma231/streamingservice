@@ -1,36 +1,35 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { HomepageComponent } from './homepage/homepage.component'; 
+
 import { RecentlyaddedComponent } from './recentlyadded/recentlyadded.component';
 import { DiscoverComponent } from './discover/discover.component';
 import { RegisterComponent } from './register/register.component';
-import { AuthguardGuard } from './authguard.guard' 
+import { AuthguardGuard } from './authguard.guard';
+
 
 const routes: Routes = [
-  {
-    path:'',
-    redirectTo:  'register',
-    pathMatch: 'full'
-  },
+  
   {
     path: 'home',
-    component: HomepageComponent
+    loadChildren: '../app/homepage/homepage.module#HomepageModule'
    },
    {
-     path: 'recently_added',
-     component: RecentlyaddedComponent
+     path: 'added',
+     loadChildren: '../app/recentlyadded/recentlyadded.module#RecentlyaddedModule'
    },
    {
-     path: 'discover',
-     component: DiscoverComponent
+     path: 'movies',
+     loadChildren: '../app/discover/discover.module#DiscoverModule'
    },
+  
    {
     path: 'register',
-    component: RegisterComponent,
+    loadChildren: '../app/register/register.module#RegisterModule',
     canActivate: [AuthguardGuard]
    },
-   { path: '**', redirectTo: '' }
+   { path: '**', redirectTo: 'home', pathMatch: 'full' }
+   
 ]
 
 @NgModule({

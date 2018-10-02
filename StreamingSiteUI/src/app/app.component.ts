@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   userName: string;
   dataLoadedStatus: boolean = true;
   
-
+  public loading = false;
   loginForm: FormGroup;
   registerForm: FormGroup
 
@@ -73,6 +73,8 @@ export class AppComponent implements OnInit {
   }
 
   login() {
+
+    this.loading = true;
     console.log("Event fired");
     this.loginForm.value['email'] = this.loginForm.value['login_email'];
     this.loginForm.value['password'] = this.loginForm.value['login_password'];
@@ -92,28 +94,34 @@ export class AppComponent implements OnInit {
           text: 'You are now signed in',
           type: 'success',
         })
+        this.loading = false;
         document.getElementById('exit_button').click();
         this.nav.navigate(['home']);
+      
       } else {
         console.log("failed");
         Swal({
           title: 'Log in failed',
           text: 'Invalid login credentials',
           type: 'warning',
-        })
+        });
+        this.loading = false;
       }
       
     });
   }
   
   checkLogin(){
+    this.loading = true;
     if(localStorage.getItem('user_name')){
       this.logged_in = true;
       this.loginButton = false;
       this.userName = localStorage.getItem('user_name');
+      this.loading = false;
     }
     else{
-      this.logged_in = false
+      this.logged_in = false;
+      this.loading = false;
     }
   }
   logout(){

@@ -19,16 +19,11 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponentComponent } from './dialog-component/dialog-component.component';
 import { AuthguardGuard } from './authguard.guard';
-
+import { LoadingModule } from 'ngx-loading';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
-    DiscoverComponent,
-    UserlistComponent,
-    RecentlyaddedComponent,
-    UserprofileComponent,
     DialogComponentComponent,
   ],
   imports: [
@@ -37,8 +32,8 @@ import { AuthguardGuard } from './authguard.guard';
     HttpClientModule,
     ReactiveFormsModule,  
     AppRoutingModule,
-    HomepageModule,
     MatDialogModule,
+    LoadingModule,
     SweetAlert2Module.forRoot({
       buttonsStyling: false,
       customClass: 'modal-content',

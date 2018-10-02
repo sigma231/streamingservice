@@ -71,9 +71,10 @@
         <ngu-carousel
         [inputs]="carouselTile"
         (initData)="initDataFn($event)"
+        
         >
    
-              <ngu-tile NguCarouselItem *ngFor="let media_item of media_listing" class="col-md-4 content-grid content"(click) ="openInfoOverlay(media_item.media_name)">
+              <!-- <ngu-tile NguCarouselItem *ngFor="let media_item of media_listing" class="col-md-4 content-grid content"(click) ="openInfoOverlay(media_item.media_name)">
               
                 <a class="play-icon popup-with-zoom-anim" href="#small-dialog">
                   <img src="http://localhost:8000/api/image/{{media_item.id}}">
@@ -86,7 +87,10 @@
                     <p>This is a short description</p>
                   </div>
               
-              </ngu-tile>
+              </ngu-tile> -->
+              <div class="row">
+                
+              </div>
               <button NguCarouselPrev class='leftRs'>&lt;</button>
             <button NguCarouselNext class='rightRs'>&gt;</button>
             
@@ -101,10 +105,123 @@
       </div>
       <!--//End-albums-->
       <!--//discover-view-->
+    <main>
+      
+      <div class="row">
+        <div class="movie" *ngFor="let media_item of media_listing| slice:0:6; let i=index" (click) ="openInfoOverlay(media_item.media_name)">
+          <div class="text">
+            <h2>{{media_item.media_name}}</h2>
+            <div class="rating">
+              <div class="dot dot-full"></div>
+              <div class="dot dot-full"></div>
+              <div class="dot dot-full"></div>
+              <div class="dot "></div>
+              <div class="dot"></div>
+            </div>
+            <p class="year">2015</p>
+            <p class="genre">Action | Science Fiction</p>
+            <p>{{media_item.description}}</p>
+            
+          </div>
+          <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w1280/zNjxzdgSwzRXnP8Stu3HGzKQKWp.jpg)"></div>
+          <div class="cover" ><img src="http://localhost:8000/api/image/{{media_item.id}}" style="width:100%;height:100%;border-radius:10px;"></div>
+        </div>
+        <!-- <div class="movie">
+          <div class="text">
+            <h2>The Martian</h2>
+            <div class="rating">
+              <div class="dot dot-full"></div>
+              <div class="dot dot-full"></div>
+              <div class="dot dot-full"></div>
+              <div class="dot dot-full"></div>
+              <div class="dot"></div>
+            </div>
+            <p class="year">2015</p>
+            <p class="genre">Action | Science Fiction</p>
+            <p>During a manned mission to Mars, Astronaut Mark Watney is presumed dead after a fierce storm and left behind by his crew. But Watney has survived and finds himself stranded and alone on the hostile planet.</p>
+            <div class="button"> &nbsp;Watch Trailer</div>
+          </div>
+          <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w600_and_h900_bestv2/5aGhaIHYuQbqlHWvWYqMCnj40y2.jpg)"></div>
+          <div class="cover" style="background-image: url(https://image.tmdb.org/t/p/w600_and_h900_bestv2/5aGhaIHYuQbqlHWvWYqMCnj40y2.jpg)"></div>
+        </div>
+        <div class="movie">
+          <div class="text">
+            <h2>Star Wars: The Force Awakens</h2>
+            <div class="rating">
+              <div class="dot dot-full"></div>
+              <div class="dot dot-full"></div>
+              <div class="dot dot-full"></div>
+              <div class="dot "></div>
+              <div class="dot"></div>
+            </div>
+            <p class="year">2015</p>
+            <p class="genre">Action | Science Fiction</p>
+            <p>Thirty years after defeating the Galactic Empire, Han Solo and his allies face a new threat from the evil Kylo Ren and his army of Stormtroopers.</p>
+            <div class="button"> &nbsp;Watch Trailer</div>
+          </div>
+          <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w600_and_h900_bestv2/vZpB8ezB1IqpxI9rx553TuGwDzJ.jpg)"></div>
+          <div class="cover" style="background-image: url(https://image.tmdb.org/t/p/w600_and_h900_bestv2/vZpB8ezB1IqpxI9rx553TuGwDzJ.jpg)"></div>
+        </div>
+        <div class="movie">
+          <div class="text">
+            <h2>Daddy's Home</h2>
+            <div class="rating">
+              <div class="dot dot-full"></div>
+              <div class="dot dot-full"></div>
+              <div class="dot dot-full"></div>
+              <div class="dot dot-full"></div>
+              <div class="dot dot-full"></div>
+            </div>
+            <p class="year">2015</p>
+            <p class="genre">Action | Science Fiction</p>
+            <p>Stepdad, Brad Whitaker, is a radio host trying to get his stepchildren to love him and call him Dad. But his plans turn upside down when the father returns.</p>
+            <div class="button"> &nbsp;Watch Trailer</div>
+          </div>
+          <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w1280/diEAZtU6KJzo6VStL5US8arkdIQ.jpg)"></div>
+          <div class="cover" style="background-image: url(https://image.tmdb.org/t/p/w1280/diEAZtU6KJzo6VStL5US8arkdIQ.jpg)"></div>
+        </div>
+        <div class="movie">
+          <div class="text">
+            <h2>Concussion</h2>
+            <div class="rating">
+              <div class="dot dot-full"></div>
+              <div class="dot dot-full"></div>
+              <div class="dot dot-full"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            <p class="year">2015</p>
+            <p class="genre">Action | Science Fiction</p>
+            <p>In Pittsburgh, an accomplished pathologist uncovers the truth about brain damage in football players who suffer repeated concussions in the course of normal play.</p>
+            <div class="button"> &nbsp;Watch Trailer</div>
+          </div>
+          <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w1280/vdK1f9kpY5QEwrAiXs9R7PlerNC.jpg)"></div>
+          <div class="cover" style="background-image: url(https://image.tmdb.org/t/p/w1280/vdK1f9kpY5QEwrAiXs9R7PlerNC.jpg)"></div>
+        </div>
+        <div class="movie">
+          <div class="text">
+            <h2>Room</h2>
+            <div class="rating">
+              <div class="dot dot-full"></div>
+              <div class="dot dot-full"></div>
+              <div class="dot dot-full"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            <p class="year">2015</p>
+            <p class="genre">Drama | Thriller</p>
+            <p>Jack is a young boy of 5 years old who has lived all his life in one room. He believes everything within it are the only real things in the world.</p>
+            <div class="button"> &nbsp;Watch Trailer</div>
+          </div>
+          <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w1280/eqFckcHuFCT1FrzLOAvXBb4jHwq.jpg)"></div>
+          <div class="cover" style="background-image: url(https://image.tmdb.org/t/p/w1280/eqFckcHuFCT1FrzLOAvXBb4jHwq.jpg)"></div>
+        </div> -->
+      </div>
+    </main>
 
       <div class="albums" >
         <div class="tittle-head">
-          <h3 class="tittle">Political
+          <h3 class="tittle">Discover
           
           </h3>
 
@@ -112,36 +229,120 @@
         </div>
 
 
-        <ngu-carousel
-        [inputs]="carouselTile"
-        (initData)="initDataFn($event)"
-        >
-   
-              <ngu-tile NguCarouselItem *ngFor="let media_item of media_listing" class="col-md-4 content-grid content"(click) ="openInfoOverlay(media_item.media_name)">
-              
-                <a class="play-icon popup-with-zoom-anim" href="#small-dialog">
-                  <img src="http://localhost:8000/api/image/{{media_item.id}}">
-                </a>
-                <div class="after tittle-head">
-                  <h4 class="tittle"></h4>
-                  </div>
-                  <div class="content-details fadeIn-top">
-                    <h3>{{media_item.media_name}}</h3>
-                    <p>This is a short description</p>
-                  </div>
-              
-              </ngu-tile>
-              <button NguCarouselPrev class='leftRs'>&lt;</button>
-            <button NguCarouselNext class='rightRs'>&gt;</button>
-            
+        <main>
       
-      </ngu-carousel>
-        
-
-
-
-
-        <div class="clearfix"> </div>
+            <div class="row">
+              <div class="movie" *ngFor="let media_item of media_listing| slice:7:13; let i=index" (click) ="openInfoOverlay(media_item.media_name)">
+                <div class="text">
+                  <h2>{{media_item.media_name}}</h2>
+                  <div class="rating">
+                    <div class="dot dot-full"></div>
+                    <div class="dot dot-full"></div>
+                    <div class="dot dot-full"></div>
+                    <div class="dot "></div>
+                    <div class="dot"></div>
+                  </div>
+                  <p class="year">2015</p>
+                  <p class="genre">Action | Science Fiction</p>
+                  <p>{{media_item.description}}</p>
+                  
+                </div>
+                <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w1280/zNjxzdgSwzRXnP8Stu3HGzKQKWp.jpg)"></div>
+                <div class="cover" ><img src="http://localhost:8000/api/image/{{media_item.id}}" style="width:100%;height:100%;border-radius:10px;"></div>
+              </div>
+              <!-- <div class="movie">
+                <div class="text">
+                  <h2>The Martian</h2>
+                  <div class="rating">
+                    <div class="dot dot-full"></div>
+                    <div class="dot dot-full"></div>
+                    <div class="dot dot-full"></div>
+                    <div class="dot dot-full"></div>
+                    <div class="dot"></div>
+                  </div>
+                  <p class="year">2015</p>
+                  <p class="genre">Action | Science Fiction</p>
+                  <p>During a manned mission to Mars, Astronaut Mark Watney is presumed dead after a fierce storm and left behind by his crew. But Watney has survived and finds himself stranded and alone on the hostile planet.</p>
+                  <div class="button"> &nbsp;Watch Trailer</div>
+                </div>
+                <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w600_and_h900_bestv2/5aGhaIHYuQbqlHWvWYqMCnj40y2.jpg)"></div>
+                <div class="cover" style="background-image: url(https://image.tmdb.org/t/p/w600_and_h900_bestv2/5aGhaIHYuQbqlHWvWYqMCnj40y2.jpg)"></div>
+              </div>
+              <div class="movie">
+                <div class="text">
+                  <h2>Star Wars: The Force Awakens</h2>
+                  <div class="rating">
+                    <div class="dot dot-full"></div>
+                    <div class="dot dot-full"></div>
+                    <div class="dot dot-full"></div>
+                    <div class="dot "></div>
+                    <div class="dot"></div>
+                  </div>
+                  <p class="year">2015</p>
+                  <p class="genre">Action | Science Fiction</p>
+                  <p>Thirty years after defeating the Galactic Empire, Han Solo and his allies face a new threat from the evil Kylo Ren and his army of Stormtroopers.</p>
+                  <div class="button"> &nbsp;Watch Trailer</div>
+                </div>
+                <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w600_and_h900_bestv2/vZpB8ezB1IqpxI9rx553TuGwDzJ.jpg)"></div>
+                <div class="cover" style="background-image: url(https://image.tmdb.org/t/p/w600_and_h900_bestv2/vZpB8ezB1IqpxI9rx553TuGwDzJ.jpg)"></div>
+              </div>
+              <div class="movie">
+                <div class="text">
+                  <h2>Daddy's Home</h2>
+                  <div class="rating">
+                    <div class="dot dot-full"></div>
+                    <div class="dot dot-full"></div>
+                    <div class="dot dot-full"></div>
+                    <div class="dot dot-full"></div>
+                    <div class="dot dot-full"></div>
+                  </div>
+                  <p class="year">2015</p>
+                  <p class="genre">Action | Science Fiction</p>
+                  <p>Stepdad, Brad Whitaker, is a radio host trying to get his stepchildren to love him and call him Dad. But his plans turn upside down when the father returns.</p>
+                  <div class="button"> &nbsp;Watch Trailer</div>
+                </div>
+                <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w1280/diEAZtU6KJzo6VStL5US8arkdIQ.jpg)"></div>
+                <div class="cover" style="background-image: url(https://image.tmdb.org/t/p/w1280/diEAZtU6KJzo6VStL5US8arkdIQ.jpg)"></div>
+              </div>
+              <div class="movie">
+                <div class="text">
+                  <h2>Concussion</h2>
+                  <div class="rating">
+                    <div class="dot dot-full"></div>
+                    <div class="dot dot-full"></div>
+                    <div class="dot dot-full"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                  </div>
+                  <p class="year">2015</p>
+                  <p class="genre">Action | Science Fiction</p>
+                  <p>In Pittsburgh, an accomplished pathologist uncovers the truth about brain damage in football players who suffer repeated concussions in the course of normal play.</p>
+                  <div class="button"> &nbsp;Watch Trailer</div>
+                </div>
+                <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w1280/vdK1f9kpY5QEwrAiXs9R7PlerNC.jpg)"></div>
+                <div class="cover" style="background-image: url(https://image.tmdb.org/t/p/w1280/vdK1f9kpY5QEwrAiXs9R7PlerNC.jpg)"></div>
+              </div>
+              <div class="movie">
+                <div class="text">
+                  <h2>Room</h2>
+                  <div class="rating">
+                    <div class="dot dot-full"></div>
+                    <div class="dot dot-full"></div>
+                    <div class="dot dot-full"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                  </div>
+                  <p class="year">2015</p>
+                  <p class="genre">Drama | Thriller</p>
+                  <p>Jack is a young boy of 5 years old who has lived all his life in one room. He believes everything within it are the only real things in the world.</p>
+                  <div class="button"> &nbsp;Watch Trailer</div>
+                </div>
+                <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w1280/eqFckcHuFCT1FrzLOAvXBb4jHwq.jpg)"></div>
+                <div class="cover" style="background-image: url(https://image.tmdb.org/t/p/w1280/eqFckcHuFCT1FrzLOAvXBb4jHwq.jpg)"></div>
+              </div> -->
+            </div>
+          </main>
+      
       </div> <div class="albums" >
         <div class="tittle-head">
           <h3 class="tittle">Comedy
@@ -152,7 +353,7 @@
         </div>
 
 
-        <ngu-carousel
+        <!-- <ngu-carousel
         [inputs]="carouselTile"
         (initData)="initDataFn($event)"
         >
@@ -175,7 +376,121 @@
             <button NguCarouselNext class='rightRs'>&gt;</button>
             
       
-      </ngu-carousel>
+      </ngu-carousel> -->
+      <main>
+      
+          <div class="row">
+            <div class="movie" *ngFor="let media_item of media_listing| slice:10:15; let i=index" (click) ="openInfoOverlay(media_item.media_name)">
+              <div class="text">
+                <h2>{{media_item.media_name}}</h2>
+                <div class="rating">
+                  <div class="dot dot-full"></div>
+                  <div class="dot dot-full"></div>
+                  <div class="dot dot-full"></div>
+                  <div class="dot "></div>
+                  <div class="dot"></div>
+                </div>
+                <p class="year">2015</p>
+                <p class="genre">Action | Science Fiction</p>
+                <p>{{media_item.description}}</p>
+                
+              </div>
+              <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w1280/zNjxzdgSwzRXnP8Stu3HGzKQKWp.jpg)"></div>
+              <div class="cover" ><img src="http://localhost:8000/api/image/{{media_item.id}}" style="width:100%;height:100%;border-radius:10px;"></div>
+            </div>
+            <!-- <div class="movie">
+              <div class="text">
+                <h2>The Martian</h2>
+                <div class="rating">
+                  <div class="dot dot-full"></div>
+                  <div class="dot dot-full"></div>
+                  <div class="dot dot-full"></div>
+                  <div class="dot dot-full"></div>
+                  <div class="dot"></div>
+                </div>
+                <p class="year">2015</p>
+                <p class="genre">Action | Science Fiction</p>
+                <p>During a manned mission to Mars, Astronaut Mark Watney is presumed dead after a fierce storm and left behind by his crew. But Watney has survived and finds himself stranded and alone on the hostile planet.</p>
+                <div class="button"> &nbsp;Watch Trailer</div>
+              </div>
+              <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w600_and_h900_bestv2/5aGhaIHYuQbqlHWvWYqMCnj40y2.jpg)"></div>
+              <div class="cover" style="background-image: url(https://image.tmdb.org/t/p/w600_and_h900_bestv2/5aGhaIHYuQbqlHWvWYqMCnj40y2.jpg)"></div>
+            </div>
+            <div class="movie">
+              <div class="text">
+                <h2>Star Wars: The Force Awakens</h2>
+                <div class="rating">
+                  <div class="dot dot-full"></div>
+                  <div class="dot dot-full"></div>
+                  <div class="dot dot-full"></div>
+                  <div class="dot "></div>
+                  <div class="dot"></div>
+                </div>
+                <p class="year">2015</p>
+                <p class="genre">Action | Science Fiction</p>
+                <p>Thirty years after defeating the Galactic Empire, Han Solo and his allies face a new threat from the evil Kylo Ren and his army of Stormtroopers.</p>
+                <div class="button"> &nbsp;Watch Trailer</div>
+              </div>
+              <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w600_and_h900_bestv2/vZpB8ezB1IqpxI9rx553TuGwDzJ.jpg)"></div>
+              <div class="cover" style="background-image: url(https://image.tmdb.org/t/p/w600_and_h900_bestv2/vZpB8ezB1IqpxI9rx553TuGwDzJ.jpg)"></div>
+            </div>
+            <div class="movie">
+              <div class="text">
+                <h2>Daddy's Home</h2>
+                <div class="rating">
+                  <div class="dot dot-full"></div>
+                  <div class="dot dot-full"></div>
+                  <div class="dot dot-full"></div>
+                  <div class="dot dot-full"></div>
+                  <div class="dot dot-full"></div>
+                </div>
+                <p class="year">2015</p>
+                <p class="genre">Action | Science Fiction</p>
+                <p>Stepdad, Brad Whitaker, is a radio host trying to get his stepchildren to love him and call him Dad. But his plans turn upside down when the father returns.</p>
+                <div class="button"> &nbsp;Watch Trailer</div>
+              </div>
+              <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w1280/diEAZtU6KJzo6VStL5US8arkdIQ.jpg)"></div>
+              <div class="cover" style="background-image: url(https://image.tmdb.org/t/p/w1280/diEAZtU6KJzo6VStL5US8arkdIQ.jpg)"></div>
+            </div>
+            <div class="movie">
+              <div class="text">
+                <h2>Concussion</h2>
+                <div class="rating">
+                  <div class="dot dot-full"></div>
+                  <div class="dot dot-full"></div>
+                  <div class="dot dot-full"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </div>
+                <p class="year">2015</p>
+                <p class="genre">Action | Science Fiction</p>
+                <p>In Pittsburgh, an accomplished pathologist uncovers the truth about brain damage in football players who suffer repeated concussions in the course of normal play.</p>
+                <div class="button"> &nbsp;Watch Trailer</div>
+              </div>
+              <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w1280/vdK1f9kpY5QEwrAiXs9R7PlerNC.jpg)"></div>
+              <div class="cover" style="background-image: url(https://image.tmdb.org/t/p/w1280/vdK1f9kpY5QEwrAiXs9R7PlerNC.jpg)"></div>
+            </div>
+            <div class="movie">
+              <div class="text">
+                <h2>Room</h2>
+                <div class="rating">
+                  <div class="dot dot-full"></div>
+                  <div class="dot dot-full"></div>
+                  <div class="dot dot-full"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </div>
+                <p class="year">2015</p>
+                <p class="genre">Drama | Thriller</p>
+                <p>Jack is a young boy of 5 years old who has lived all his life in one room. He believes everything within it are the only real things in the world.</p>
+                <div class="button"> &nbsp;Watch Trailer</div>
+              </div>
+              <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w1280/eqFckcHuFCT1FrzLOAvXBb4jHwq.jpg)"></div>
+              <div class="cover" style="background-image: url(https://image.tmdb.org/t/p/w1280/eqFckcHuFCT1FrzLOAvXBb4jHwq.jpg)"></div>
+            </div> -->
+          </div>
+        </main>
+    
         
 
 

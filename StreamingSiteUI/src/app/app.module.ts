@@ -20,6 +20,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponentComponent } from './dialog-component/dialog-component.component';
 import { AuthguardGuard } from './authguard.guard';
 import { LoadingModule } from 'ngx-loading';
+import { HomepageService } from './homepage/homepage.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { LoadingModule } from 'ngx-loading';
   })
     
   ],
-  providers: [AuthService, AuthguardGuard],
+  providers: [AuthService, AuthguardGuard, HomepageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

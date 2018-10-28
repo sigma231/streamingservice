@@ -113,6 +113,7 @@ html, body, div, form, input, label, ul, li, h1, h2, p{
       border: 1.5px solid #d0d0d0;
       font-family: 'Raleway', 'sans-serif'; 
   }
+   
   
   .signup input.email{
       background: url(https://res.cloudinary.com/fazurrehman/image/upload/v1485168692/dailyui/email.png) left 10px center no-repeat;

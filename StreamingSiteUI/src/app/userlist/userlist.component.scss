@@ -3,9 +3,15 @@
   transform: translate3d(0, 0, 0);
 }
 
+::scrollbar, ::-webkit-scrollbar {
+  display: none;
+}
 
-
-
+body {
+  font-family: "Poppins", sans-serif;
+  color: #313C48;
+  -webkit-font-smoothing: antialiased;
+}
 
 main {
   position: relative;
@@ -44,13 +50,11 @@ p {
 #page-wrapper{
   padding-top:80px;
 }
-.movie-container{
-  width: 200px; 
-}
 .movie {
   font-size: 12px;
   position: relative;
   z-index: 0;
+  flex-grow: 1;
   display: block;
   overflow: visible;
   border-radius: 10px;
@@ -61,22 +65,12 @@ p {
   will-change: transform, z-index;
   white-space: normal;
   margin-right: 20px;
-  width:200px;
 }
-.overlay-text {
-  height:30%;
-  width:100%;
-  position:absolute;
-  bottom:0;
-  padding-left:10px;
-  padding-right:10px;
-  background: rgba(0,0,0, 0.7);
-  vertical-align: middle;
 
-}
 .cover {
   position: absolute;
   z-index: 30;
+  width: 100%;
   height: 100%;
   transition: 300ms ease-out;
   border-radius: 5px;

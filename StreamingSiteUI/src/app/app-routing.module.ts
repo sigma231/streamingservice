@@ -22,7 +22,10 @@ const routes: Routes = [
      path: 'movies',
      loadChildren: '../app/discover/discover.module#DiscoverModule'
    },
-  
+  {
+    path: 'user_list',
+    loadChildren: '../app/userlist/userlist.module#UserlistModule'
+  },
    {
     path: 'register',
     loadChildren: '../app/register/register.module#RegisterModule',

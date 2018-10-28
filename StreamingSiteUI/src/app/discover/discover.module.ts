@@ -7,6 +7,7 @@ import { DiscoverComponent } from './discover.component';
 const routes: Routes = [
   {
     path: '',
+    component: DiscoverComponent
 
   }
 ]

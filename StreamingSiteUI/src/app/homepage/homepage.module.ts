@@ -4,6 +4,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { HomepageComponent } from './homepage.component';
 import { VgCoreModule } from 'videogular2/core';
 import { VgControlsModule } from 'videogular2/controls';
+import { VgOverlayPlayModule } from 'videogular2/overlay-play';
 import { OwlModule } from 'ngx-owl-carousel';
 import { Routes, RouterModule } from '@angular/router';
 import { HomepageService } from './homepage.service';
@@ -25,6 +26,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     VgCoreModule,
     VgControlsModule,
+    VgOverlayPlayModule,
     NguCarouselModule
   ],
   providers: [HomepageService, NguCarouselService],

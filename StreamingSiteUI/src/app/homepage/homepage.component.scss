@@ -353,13 +353,15 @@ p {
   z-index: 30;
   width: 100%;
   height: 100%;
+  text-align: center;
   transition: 300ms ease-out;
   border-radius: 5px;
   background-position: center center;
   background-size: cover;
   will-change: transform;
+  
   &:before, &:after {
-    position: absolute;
+    
     z-index: 1;
     width: 100%;
     height: 100%;
@@ -370,10 +372,7 @@ p {
   &:before {
     box-shadow: 0 1px 2px 0 rgba(127, 124, 122, 0.3);
   }
-  &:after {
-    opacity: 0;
-    box-shadow: 0 10px 54px 0 rgba(0, 0, 0, 0.2);
-  }
+  
 }
 
 .cover_blur {
@@ -469,6 +468,7 @@ p {
 }
 
 .movie {
+  
   &:hover .text {
     visibility: visible;
     transition: 180ms cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -500,6 +500,17 @@ p {
   border-radius: 5px;
   background: #09F;
   box-shadow: 0 7px 38px 0 rgba(0, 153, 255, 0.45);
+}
+.overlay-text {
+  height:30%;
+  width:100%;
+  position:absolute;
+  bottom:0;
+  padding-left:10px;
+  padding-right:10px;
+  background: rgba(0,0,0, 0.7);
+  vertical-align: middle;
+
 }
 
 .movie:nth-child(n+4) .button {

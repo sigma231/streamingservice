@@ -16,8 +16,7 @@
 					<div class="sign">
 					  <div class="sign-left">
 						<ul>
-						  <li><a class="fb" href="#"><i></i>Sign in with Facebook</a></li>
-						  <li><a class="goog" href="#"><i></i>Sign in with Google</a></li>
+						 
 						
 						</ul>
 					  </div>
@@ -41,7 +40,7 @@
 					</form>
 					<div class="clearfix">
 						<div class="row">
-							<h3 style="color:black;padding-top:5px;">Not a member? <a routerLink="register"><span style="color:#D10024">Register Here</span></a></h3>
+							<h3 style="color:black;padding-top:5px;">Not a member? <button routerLink="register"><span style="color:#D10024">Register Here</span></button></h3>
 						</div>
 					</div>
 				
@@ -129,10 +128,9 @@
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
 						<li routerLinkActive="active" ><a href="#" routerLink="/home">Home</a></li>
-						<li routerLinkActive="active"><a routerLink="/movies">Tv Shows</a></li>
 						<li routerLinkActive="active"><a routerLink="/movies">Movies</a></li>
 						<li routerLinkActive="active"><a routerLink="/added">Recently Added</a></li>
-						<li *ngIf="logged_in"><a href="/user_list">My List</a></li>
+						<li *ngIf="logged_in"><a routerLink="/user_list">My List</a></li>
 						
 					</ul>
 					
@@ -154,9 +152,7 @@
 												
 												<div *ngIf="loginButton" style="margin-top:5px;"> 
 													<div id="loginpop"> <a href="#" id="loginButton" data-toggle="modal" data-target="#myModal5"><span>Sign In <i class="arrow glyphicon glyphicon-chevron-right"></i></span></a></div>
-														<!-- <a href="#" id="registerButton" class="col-md-6" data-toggle="modal" data-target="#myModal6"><span>Sign Up</span></a> -->
-													<!-- <a class="col-md-6" href="#" id="loginButton" data-toggle="modal" data-target="#myModal5"><span><h3>Login</h3> <i class="arrow glyphicon glyphicon-chevron-right"></i></span></a> -->
-												
+						
 												</div>
 											
 												<div *ngIf="logged_in" id="loginpop">

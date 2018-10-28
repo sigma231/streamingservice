@@ -9,10 +9,13 @@ import { HomepageService } from '../homepage/homepage.service';
 export class DiscoverComponent implements OnInit {
   media_listing: any;
   dataLoadedStatus: boolean = true;
+  category_data:any;
   constructor(private home_services: HomepageService) { }
 
 
   ngOnInit() {
+    this.getCategoryData();
+    this.getAllMedia();
   }
   getAllMedia() {
     this.home_services.getAllMedia().subscribe(data => {
@@ -25,6 +28,11 @@ export class DiscoverComponent implements OnInit {
   }
   dataLoaded(){
     this.dataLoadedStatus = false;
+  }
+  getCategoryData(){
+    this.home_services.getCategories().subscribe(response => {
+      this.category_data = response;
+    })
   }
 
 

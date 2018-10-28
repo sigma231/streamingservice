@@ -1,0 +1,92 @@
+
+<div id="page-wrapper">
+  
+        <div class="tittle-head">
+            <h3 class="tittle">Continue watching
+              <span class="new">New</span>
+            </h3>
+            <div style="position: absolute; right: 10px;  ">
+              <form role="search" method="get" id="searchform" class="searchform" action="#" _lpchecked="1">
+    
+                <div class="searchboxwrapper">
+                  
+                <input class="searchbox" type="text" value="" name="s" placeholder="Search for" id="s">
+                  
+                <input class="searchsubmit" type="submit" id="searchsubmit" value="">
+                  
+                </div>
+                </form>
+            </div>
+        
+            <div class="clearfix"> </div>
+          </div>
+          
+        <div class="row">
+          <div class="movie" *ngFor="let media_item of media_listing| slice:0:6; let i=index" (click) ="openInfoOverlay(media_item.media_name)">
+            <div class="text">
+              <h2>{{media_item.media_name}}</h2>
+              <div class="rating">
+                <div class="dot dot-full"></div>
+                <div class="dot dot-full"></div>
+                <div class="dot dot-full"></div>
+                <div class="dot "></div>
+                <div class="dot"></div>
+              </div>
+              <p class="year">2015</p>
+              <p class="genre">Action | Science Fiction</p>
+              <p>{{media_item.description}}</p>
+              
+            </div>
+            <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w1280/zNjxzdgSwzRXnP8Stu3HGzKQKWp.jpg)"></div>
+            <div class="cover" ><img src="http://localhost:8000/api/image/{{media_item.id}}" style="width:100%;height:100%;border-radius:10px;"></div>
+          </div>
+          
+        </div>
+        <div class="clearfix"> </div>
+        <div class="row">
+          <div class="movie" *ngFor="let media_item of media_listing| slice:7:13; let i=index" (click) ="openInfoOverlay(media_item.media_name)">
+            <div class="text">
+              <h2>{{media_item.media_name}}</h2>
+              <div class="rating">
+                <div class="dot dot-full"></div>
+                <div class="dot dot-full"></div>
+                <div class="dot dot-full"></div>
+                <div class="dot "></div>
+                <div class="dot"></div>
+              </div>
+              <p class="year">2015</p>
+              <p class="genre">Action | Science Fiction</p>
+              <p>{{media_item.description}}</p>
+              
+            </div>
+            <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w1280/zNjxzdgSwzRXnP8Stu3HGzKQKWp.jpg)"></div>
+            <div class="cover" ><img src="http://localhost:8000/api/image/{{media_item.id}}" style="width:100%;height:100%;border-radius:10px;"></div>
+          </div>
+          
+        </div>
+        <div class="clearfix"> </div>
+        <div class="row">
+          <div class="movie" *ngFor="let media_item of media_listing| slice:14:20; let i=index" (click) ="openInfoOverlay(media_item.media_name)">
+            <div class="text">
+              <h2>{{media_item.media_name}}</h2>
+              <div class="rating">
+                <div class="dot dot-full"></div>
+                <div class="dot dot-full"></div>
+                <div class="dot dot-full"></div>
+                <div class="dot "></div>
+                <div class="dot"></div>
+              </div>
+              <p class="year">2015</p>
+              <p class="genre">Action | Science Fiction</p>
+              <p>{{media_item.description}}</p>
+              
+            </div>
+            <div class="cover_blur" style="background-image: url(https://image.tmdb.org/t/p/w1280/zNjxzdgSwzRXnP8Stu3HGzKQKWp.jpg)"></div>
+            <div class="cover" ><img src="http://localhost:8000/api/image/{{media_item.id}}" style="width:100%;height:100%;border-radius:10px;"></div>
+          </div>
+          
+        </div>
+      
+    
+    </div>
+    

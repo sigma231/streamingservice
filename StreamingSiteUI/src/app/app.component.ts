@@ -82,6 +82,8 @@ export class AppComponent implements OnInit {
     this.auth_service.login(this.loginForm.value).subscribe(data => {
       console.log(data);
       if (data['success']) {
+        localStorage.setItem('user_id', data['success'].user_id);
+        console.log(localStorage.getItem('user_id'));
         localStorage.setItem('user_token', data['success'].token);
         localStorage.setItem('user_name', data['success'].user);
         console.log(localStorage.getItem('user_token'));
@@ -133,10 +135,15 @@ export class AppComponent implements OnInit {
       confirmButtonText: 'Confirm',
       cancelButtonText: 'Keep signed in '
     }).then(result => {
-      localStorage.removeItem('user_name');
+      console.log(result);
+     
+      if(result.value){
+        localStorage.removeItem('user_name');
       this.logged_in = false;
       this.loginButton = true;
       this.nav.navigate(['register']);
+      }
+      
     }, ()=> console.log('Stay on this page'));
     //
     

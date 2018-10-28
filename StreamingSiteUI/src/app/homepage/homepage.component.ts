@@ -28,9 +28,11 @@ declare var $: any;
 export class HomepageComponent implements OnInit{
   overlayOpen: boolean = false;
   video_url: string;
+  media_id: number;
   media_listing: any;
   _videoPlayer;
   dataLoadedStatus: boolean = true;
+  film_progress: number;
   private carouselToken: string;
   public carouselTileItems: Array<any>;
   public carouselTile: NguCarousel;
@@ -41,23 +43,7 @@ export class HomepageComponent implements OnInit{
     
 
   }
-  ngOnInit() {
-    
- 
-    this.carouselTile = {
-      grid: {xs: 1, sm: 1, md: 6, lg: 6, all: 0},
-      slide: 2,
-      speed: 400,
-      
-      point: {
-        visible: true
-      },
-      load: 1,
-      
-      loop: true,
-    }
-  
- 
+  ngOnInit() { 
     
     this.getAllMedia();
     
@@ -78,24 +64,69 @@ export class HomepageComponent implements OnInit{
 
   }
 
-  openInfoOverlay(media_id) {
+  openInfoOverlay(media_id, id) {
 
     
-    console.log(time);    
+    console.log(time);
+    this.media_id = id
+    console.log(id);
     this.overlayOpen = true;
     console.log(media_id);
+    var user_id = localStorage.getItem('user_id');
     this.video_url = "http://localhost:8000/api/video/"+ media_id;
+    var progress_details = {
+      'movie_Id': this.media_id,
+      'user_id': user_id 
+    };
+    console.log(progress_details);
+    console.log(progress_details);
+    
+    this.home_services.getMediaProgress(progress_details).subscribe(response => {
+      console.log(response);
+      
+      this.film_progress = response[Object.keys(response).length -1].progress;
+      console.log(this.film_progress);
+      var video = <HTMLVideoElement>document.getElementById('singleVideo');
+      video.currentTime = this.film_progress;
+      
+        });
     var time = localStorage.getItem(this.video_url);
     console.log(time);
-    var video = <HTMLVideoElement>document.getElementById('singleVideo');
+
+    
     
 
   }
+  getCategoryData(){
+    this.home_services.getCategories().subscribe(response => {
+
+      console.log(response);
+    })
+  }
+  
+  loadProgressData(e){
+    var video = <HTMLVideoElement>document.getElementById('singleVideo');
+    
+    console.log("I ran");
+  }
+  onPlayerReady(e){
+    console.log("this one ran");
+     
+  }
   closeInfoOverlay() {
     var video = <HTMLVideoElement>document.getElementById('singleVideo');
+    
     var time = video.currentTime;
     console.log(time);
-    localStorage.setItem(this.video_url, time.toString());
+    var video_progress_details = {
+      'user_id': localStorage.getItem('user_id'),
+      'movie_Id': this.media_id,
+      'progress': time
+    }
+    this.home_services.postMediaProgress(video_progress_details).subscribe(response => {
+      console.log(response);
+    })
+    
     this.overlayOpen = false;
   }
   dataLoaded(){

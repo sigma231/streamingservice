@@ -8,7 +8,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  api_url: string = "http://localhost:8000/api"
+  api_url: string = "http://www.jaluotv.com/server/api"
 
 
   login(loginForm: any){

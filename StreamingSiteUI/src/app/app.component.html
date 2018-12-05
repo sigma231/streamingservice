@@ -1,7 +1,18 @@
+<div class="display-restriction" style="z-index:999999" *ngIf="timeout">
+		<div class="message w3-animate-fading" style="left:20vw; top:30vh">
+			<img src="assets/images/logo.png" alt="loader" style="height:50%; width:70%">
+			</div>
+	</div>
+<div class="display-restriction" *ngIf="mobile_device">
+	<div class="message">
+		<h1>Kindly revisit page on Desktop or a Laptop device</h1>
+		<h3>Mobile Application Coming soon	</h3>
+	</div>
+</div>
 
     <section>
 		<!-- left side start-->
-		  
+	
 	  
 		<!-- /w3l-agile -->
 		  <!-- signup -->
@@ -40,8 +51,9 @@
 					</form>
 					<div class="clearfix">
 						<div class="row">
-							<h3 style="color:black;padding-top:5px;">Not a member? <button routerLink="register"><span style="color:#D10024">Register Here</span></button></h3>
+							<h3 style="color:black;padding-top:5px;">Not a member? <a (click)="register()"><span style="color:#D10024">Register Here</span></a></h3>
 						</div>
+						<h3 style="color:black;padding-top:5px;">Forgot Password? <a (click)="passwordReset()"><span style="color:#D10024">Click Here</span></a></h3>
 					</div>
 				
 						
@@ -119,20 +131,78 @@
 			  <!-- //signup -->
 		<!-- /w3l-agile -->
 		  <!-- left side end-->
-		  <!-- main content start-->
+			<!-- main content start-->
+	
+					<!-- <nav class="navbar" style="position:fixed;top:0;z-index:9999;width:100%;height:60px;background:rgb(85, 85, 85)">
+							<a class="navbar-brand" href="#">
+								<img src="assets/images/logo.png"  width="68" height="30" alt="">
+							</a>
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+									<span class="navbar-toggler-icon"></span>
+							</button>
+								<div class="collapse navbar-collapse" id="navbarNav">
+									<ul class="navbar-nav">
+										<li class="nav-item active">
+											<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="#">Features</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="#">Pricing</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link disabled" href="#">Disabled</a>
+										</li>
+									</ul>
+								</div>
+						
+								
+						</nav> -->
+	
+						<nav class="mobile-nav navbar navbar-expand-lg navbar-light bg-light" style="background:rgb(65, 65, 65);position:fixed;z-index:9999;width:100vw;height:60px">
+								<a class="navbar-brand" href="#">
+										<img src="assets/images/logo.png"  width="68" height="30" alt="">
+									</a>
+								<button class="navbar-toggler" *ngIf="logged_in" style="background:black;height:30px;width:40px;position:fixed;right:0;margin:10px;" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+										<i class="fa fa-bars" style="color:white"></i>
+								</button>
+								<div *ngIf="logged_in"  class="collapse navbar-collapse" id="navbarNav" style="background:rgb(65, 65, 65)">
+									<ul class="navbar-nav main-nav nav" style="margin-left:0">
+											<li routerLinkActive="active"><a routerLink="/home">Home</a></li>
+											<li routerLinkActive="active" ><a routerLink="/movies">Movies</a></li>
+											<li routerLinkActive="active" ><a routerLink="/added">Recently Added</a></li>
+											<li *ngIf="logged_in"><a routerLink="/user_list">My List</a></li>
+											<li routerLinkActive="active" ><a (click)="logout()">Log out <i class="fa fa-sign-in"></i>  :<br>{{userName}} </a></li>
+
+									</ul>
+								</div>
+								<button *ngIf="loginButton" style="position: fixed;right:0;margin:10px;background:black;height:40px;" data-toggle="modal" data-target="#myModal5">
+										<h4><a>SIGN IN <i class="arrow glyphicon glyphicon-chevron-right"></i></a></h4>
+								</button>
+							</nav>
+
 		  <div class="main-content">
 			  <!-- header-starts -->
 			  <div class="header-section" style="position:fixed;top:0;z-index:9999;width:100%">
+						
 			  <!--toggle button start-->
 				<div id="responsive-nav">
 					<!-- NAV -->
-					<ul class="main-nav nav navbar-nav">
-						<li routerLinkActive="active" ><a href="#" routerLink="/home">Home</a></li>
-						<li routerLinkActive="active"><a routerLink="/movies">Movies</a></li>
-						<li routerLinkActive="active"><a routerLink="/added">Recently Added</a></li>
-						<li *ngIf="logged_in"><a routerLink="/user_list">My List</a></li>
-						
-					</ul>
+					<div class="row" >
+							
+							<ul class="main-nav nav navbar-nav">
+									<li class="logo" ><img src="assets/images/logo.png" style="width:6vw;"></li>
+									<li routerLinkActive="active" *ngIf="logged_in"><a routerLink="/home">Home</a></li>
+									<li routerLinkActive="active" *ngIf="logged_in"><a routerLink="/movies">Movies</a></li>
+									<li routerLinkActive="active" *ngIf="logged_in"><a routerLink="/added">Recently Added</a></li>
+									
+									<li *ngIf="logged_in"><a routerLink="/user_list">My List</a></li>
+									
+								</ul>
+					</div>
+					
+				
 					
 					<!-- /NAV -->
 				</div>
@@ -150,15 +220,15 @@
 										  
 											   <div class="col-md-4 login-pop">
 												
-												<div *ngIf="loginButton" style="margin-top:5px;"> 
-													<div id="loginpop"> <a href="#" id="loginButton" data-toggle="modal" data-target="#myModal5"><span>Sign In <i class="arrow glyphicon glyphicon-chevron-right"></i></span></a></div>
+												<div *ngIf="loginButton" style="top:15px;right:8px;position:fixed;"> 
+													<div id="loginpop"> <a id="loginButton" data-toggle="modal" data-target="#myModal5"><span>Sign In <i class="arrow glyphicon glyphicon-chevron-right"></i></span></a></div>
 						
 												</div>
 											
 												<div *ngIf="logged_in" id="loginpop">
-													<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><h3 type="button"  style="color:white;"><span class="glyphicon glyphicon-user"></span> {{userName}}</h3></button>
+													<button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><h3 style="color:white;"><span class="glyphicon glyphicon-user"></span> {{userName}}</h3></button>
 
-													<button class="btn btn-secondary dropdown-toggle" (click)="logout()"><h3 type="button" id="logoutButton"><i class="fa fa-sign-in"></i></h3></button>
+													<button class="btn btn-secondary dropdown-toggle" (click)="logout()"><h3 id="logoutButton"><i class="fa fa-sign-in"></i></h3></button>
 
 												</div>
 											
@@ -188,7 +258,3 @@
 	 </section>
 	
   
-  <script src="assets/js/scripts.js"></script>
-  <!-- Bootstrap Core JavaScript -->
-  <script src="assets/js/bootstrap.js"></script>
- 

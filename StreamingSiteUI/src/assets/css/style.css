@@ -2182,9 +2182,11 @@ li.list-group-item1 {
     box-shadow: none;
 }
 .sign-right{
-	    float: left;
-    width: 50%;
-    margin-left:5%;
+	text-align:center;
+	width: 90%;
+	float:left;
+	margin-left:10px;
+	
 }
 .sign-right h3{
         color: #e52325;

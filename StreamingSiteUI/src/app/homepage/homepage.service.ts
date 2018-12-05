@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class HomepageService {
-  api_url: string = "http://localhost:8000/api";
+  api_url: string = "http://www.jaluotv.com/server/api";
 
   constructor(private http: HttpClient) { }
 
@@ -37,14 +37,38 @@ export class HomepageService {
 
     })
   }
-  getUserMedia(user_data){
-    return this.http.post(this.api_url + "/get_user_media", user_data).map(response=> {
+  confirmUser(otp: any) {
+    return this.http.post(this.api_url + "/confirm_code", otp).map(response => {
+      console.log(response);
+      return response;
+
+    })
+  }
+  getUserMedia(user_data) {
+    return this.http.post(this.api_url + "/get_user_media", user_data).map(response => {
       console.log(response);
       return response;
     })
-  } 
-  getCategories(){
+  }
+  getCategories() {
     return this.http.get(this.api_url + "/get_category_media").map(response => {
+      console.log(response);
+      return response;
+    })
+  }
+  resetRequest(email: any) {
+    console.log(email);
+    return this.http.post(this.api_url + '/password_reset', email).map(response => {
+      console.log(response);
+      return response;
+    })
+  }
+  resetRequest2(password: any, id) {
+
+    password['id'] = id;
+    console.log(password);
+    
+    return this.http.post(this.api_url + '/password_change', password).map(response => {
       console.log(response);
       return response;
     })

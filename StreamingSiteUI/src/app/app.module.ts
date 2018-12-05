@@ -20,12 +20,18 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponentComponent } from './dialog-component/dialog-component.component';
 import { AuthguardGuard } from './authguard.guard';
 import { LoadingModule } from 'ngx-loading';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 import { HomepageService } from './homepage/homepage.service';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
+import { Passreset2Component } from './passreset2/passreset2.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     DialogComponentComponent,
+    PasswordResetComponent,
+    Passreset2Component
   ],
   imports: [
     BrowserModule,
@@ -35,6 +41,7 @@ import { HomepageService } from './homepage/homepage.service';
     AppRoutingModule,
     MatDialogModule,
     LoadingModule,
+    DeviceDetectorModule.forRoot(),
     SweetAlert2Module.forRoot({
       buttonsStyling: false,
       customClass: 'modal-content',

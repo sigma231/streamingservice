@@ -3,15 +3,11 @@
   transform: translate3d(0, 0, 0);
 }
 
-::scrollbar, ::-webkit-scrollbar {
-  display: none;
+
+html {
+  height:100%;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  color: #313C48;
-  -webkit-font-smoothing: antialiased;
-}
 
 main {
   position: relative;
@@ -49,12 +45,15 @@ p {
 }
 #page-wrapper{
   padding-top:80px;
+  overflow-y: hidden;
+}
+.movie-container{
+  width: 200px; 
 }
 .movie {
   font-size: 12px;
   position: relative;
   z-index: 0;
-  flex-grow: 1;
   display: block;
   overflow: visible;
   border-radius: 10px;
@@ -65,12 +64,23 @@ p {
   will-change: transform, z-index;
   white-space: normal;
   margin-right: 20px;
+  width:200px;
 }
+.overlay-text {
+  height:30%;
+  width:100%;
+  position:absolute;
+  bottom:0;
+  padding-left:10px;
+  padding-right:10px;
+  background: rgba(0,0,0, 0.7);
+  vertical-align: middle;
 
+}
 .cover {
   position: absolute;
   z-index: 30;
-  width: 100%;
+  width:100%;
   height: 100%;
   transition: 300ms ease-out;
   border-radius: 5px;
@@ -87,11 +97,11 @@ p {
     border-radius: 5px;
   }
   &:before {
-    box-shadow: 0 1px 2px 0 rgba(127, 124, 122, 0.3);
+    
   }
   &:after {
     opacity: 0;
-    box-shadow: 0 10px 54px 0 rgba(0, 0, 0, 0.2);
+    
   }
 }
 
@@ -105,7 +115,7 @@ p {
   border-radius: 5px;
   background-position: center center;
   background-size: cover;
-  box-shadow: 0 10px 26px 0 rgba(0, 0, 0, 1);
+  // box-shadow: 0 10px 26px 0 rgba(0, 0, 0, 1);
   filter: blur(40px) brightness(1.5) saturate(1);
   will-change: opacity;
 }
@@ -282,3 +292,247 @@ input::-moz-focus-inner, button::-moz-focus-inner {
     opacity: 1;
   }
 }
+#page-wrapper {
+  text-align:center;
+}
+
+.row {
+  margin:40px;
+}
+h2 {
+  color: #FFF;
+}
+.searchform div {
+  height: 26px;
+  width: 193px;
+  }
+  
+  .searchboxwrapper {
+  position: relative;
+  }
+  
+  .searchbox {
+  border: 1px solid #dadada;
+  outline: none;
+  font: 11px 'Montserrat', sans-serif;
+  color: #777;
+  width: 182px;
+  height: 26px;
+  background: #fff;
+  padding-left: 10px;
+  }
+  
+  .searchsubmit {
+  font-family: 'FontAwesome';
+  width: 29px;
+  height: 29px;
+  border: 1px solid #dadada;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #dadada;
+  border: none;
+  color: #5d3250;
+  cursor: hand; cursor: pointer;
+  }
+  @import url(https://fonts.googleapis.com/css?family=Raleway);
+.header-section{
+    height:60px;
+    background:rgba(27, 30, 30, 0.5 );
+}
+.main-content{
+    background: #272727;
+    
+}
+#loginpop a span {
+    color: #fff;
+}
+#loginpop a :hover {
+    color: #e52325; 
+}
+.profile-details {
+    padding: 0 0;
+}
+.sticky-left-side {
+    background:#000;
+}
+body {
+  font-family: 'Raleway', sans-serif;
+}
+#loginpop{
+    float:right;
+}
+li > a:focus {
+    background:#292929;
+}
+li > a:active {
+    background:#292929;
+}
+
+div.col-md-4.login-pop {
+    right: 0;
+    position:fixed;
+    width:400px;
+}
+
+#loginButton span {
+    width:110px;
+}
+#registerButton span {
+    width:105px;
+}
+button:focus {outline:0;}
+button {
+  background: none;
+  border:none;
+}
+
+
+nav.menubar{
+  padding:5px;
+  font:400 22px 'Josefin Sans', serif;
+  position: fixed;
+  top: 0;left: 0;
+  transition: all .3s ease-in-out;
+  border-bottom:2px solid transparent;
+  margin-top: 10px;
+}
+
+nav.menubar ul{
+  text-align:center;
+  letter-spacing:.1px;
+}
+
+nav.menubar ul li{
+  display:inline;
+  padding:0 10px;
+}
+.main-nav>li+li {
+    margin-left: 30px
+  }
+  
+  .main-nav>li>a {
+    padding: 20px 0px;
+  }
+  
+  .main-nav>li>a:hover, .main-nav>li>a:focus, .main-nav>li.active>a {
+    color: #D10024;
+    background-color: transparent;
+  }
+  
+  .main-nav>li>a:after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: #D10024;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+  }
+  
+  .main-nav>li>a:hover:after, .main-nav>li>a:focus:after, .main-nav>li.active>a:after {
+    width: 100%;
+  }
+  
+  .header-ctn li.nav-toggle {
+    display: none;
+  }
+  
+  /*----------------------------*\
+      responsive nav
+  \*----------------------------*/
+  
+  @media only screen and (max-width: 991px) {
+    .header-ctn .menu-toggle {
+      display: inline-block;
+    }
+    #responsive-nav {
+      position: fixed;
+      left: 0;
+      top: 0;
+      background: #15161D;
+      height: 100vh;
+      max-width: 250px;
+      width: 0%;
+      overflow: hidden;
+      z-index: 22;
+      padding-top: 60px;
+      -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+      transform: translateX(-100%);
+      -webkit-transition: 0.2s all;
+      transition: 0.2s all;
+    }
+    #responsive-nav.active {
+      -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+      transform: translateX(0%);
+      width: 100%;
+    }
+    .main-nav {
+      margin: 60px;
+      float: none;
+    }
+    .main-nav>li {
+      display: block;
+      float: none;
+    }
+    .main-nav>li+li {
+      margin-left: 0px;
+    }
+    .main-nav>li>a {
+      padding: 15px;
+      color: #FFF;
+    }
+  }
+  a {
+      color:#ffffff;
+  }
+  .navbar-nav {
+      margin-left:60px;
+  }
+  #logoutButton:hover {
+    color:#D10024;
+  }
+  #logoutButton {
+    color:white;
+  }
+  .swal2-popup .swal2-styled.swal2-confirm {
+    background: #D10024; 
+  }
+
+  .nav>li>a {
+    font-family: 'Raleway', 'sans-serif'
+  }
+  @media only screen and (max-width: 450px) {
+    .row {
+      font-size: 0;
+      max-width: 400px;
+      width: 100%;
+      padding-left:10px;
+    padding-right:10px;
+      display: flex;
+    }    
+  
+    .movie {
+      
+      z-index: 0;
+      display: block;
+      overflow: hidden;
+      border-radius: 10px;
+      height: 50vw;
+      transition: 350ms ease-in-out;
+      transform: scale(1);
+      background-color: #F1EEEA;
+      will-change: transform, z-index;
+      white-space: normal;
+      margin-right: 20px;
+      width:100%;
+      margin-bottom:10px;
+    }
+    .movie-row {
+      display:block;
+      margin: 0;
+    }
+  }

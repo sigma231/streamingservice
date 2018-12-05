@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators, ControlContainer } from '@angular/f
 import { Router } from '@angular/router';
 import { AuthService } from './auth/auth.service';
 import Swal from 'sweetalert2';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 import * as $ from 'jquery';
 
@@ -11,20 +12,23 @@ import * as $ from 'jquery';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   title = 'app';
   loginButton: boolean = true;
   logged_in: boolean = false
   userName: string;
+  timeout: boolean = true;
   dataLoadedStatus: boolean = true;
-  
+  mobile_device: boolean = false;
+  deviceInfo:any;  
   public loading = false;
   loginForm: FormGroup;
   registerForm: FormGroup
 
-  constructor(private auth_service: AuthService, private nav: Router) {
+  constructor(private auth_service: AuthService, private nav: Router, private deviceService: DeviceDetectorService) {
+    // screen.orientation.lock('landscape');
     const email = new FormControl('', Validators.required);
     const password = new FormControl('', Validators.required);
     const c_password = new FormControl('', Validators.required);
@@ -54,23 +58,39 @@ export class AppComponent implements OnInit {
      })
   }
   ngOnInit() {
+   
+    
     
     this.checkLogin();
-    $(document).scroll(function() {
-      if ($(window).scrollTop() > 610) {
-        $('.header-section').css('-webkit-animation', 'fadein 2s');
-        $('.header-section').css('background', 'rgba(27, 30, 30, 1.0)').fadeIn();
-       
-    }
-      else if($(window).scrollTop() > 0){
-        $('.header-section').css('background', 'rgba(27, 30, 30, 0.5)');
-        
-      }
-    });
+
+    // this.device_check();
     
-
-
+    this.loader();
+    // this.checkLogin();
   }
+  loader(){
+    setTimeout(() => 
+    {
+        this.timeout = false;
+    },
+    10000);
+    
+  }
+  // device_check(){
+  //   this.deviceInfo = this.deviceService.getDeviceInfo();
+  //   const isMobile = this.deviceService.isMobile();
+  //   const isTablet = this.deviceService.isTablet();
+  //   const isDesktopDevice = this.deviceService.isDesktop();
+
+  //   if(isMobile || isTablet){
+  //     this.mobile_device = true;
+  //   }else {
+  //     this.mobile_device = false;   
+  //   }
+  //   console.log(this.deviceInfo)
+  //   console.log(isMobile);
+
+  // }
 
   login() {
 
@@ -91,6 +111,7 @@ export class AppComponent implements OnInit {
         this.userName = data['success'].user;
         this.loginButton = false;
         this.logged_in = true;
+        
         Swal({
           title: 'Sign In',
           text: 'You are now signed in',
@@ -104,7 +125,7 @@ export class AppComponent implements OnInit {
         console.log("failed");
         Swal({
           title: 'Log in failed',
-          text: 'Invalid login credentials',
+          text: 'Invalid login credentials or inactive account',
           type: 'warning',
         });
         this.loading = false;
@@ -118,13 +139,20 @@ export class AppComponent implements OnInit {
     if(localStorage.getItem('user_name')){
       this.logged_in = true;
       this.loginButton = false;
-      this.userName = localStorage.getItem('user_name');
+      this.userName = localStorage.getItem('user_name');  
+      // this.nav.navigate(['home']);
       this.loading = false;
+      
     }
     else{
       this.logged_in = false;
+      // this.nav.navigate(['register']);
       this.loading = false;
     }
+  }
+  passwordReset(){
+    document.getElementById('exit_button').click();
+    this.nav.navigate(['resetpassword'])
   }
   logout(){
     Swal({
@@ -147,6 +175,11 @@ export class AppComponent implements OnInit {
     }, ()=> console.log('Stay on this page'));
     //
     
+  }
+  register(){
+    document.getElementById('exit_button').click();
+    this.nav.navigate(['register']);
+
   }
 
 

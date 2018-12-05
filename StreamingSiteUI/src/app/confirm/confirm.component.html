@@ -1,0 +1,41 @@
+<div id="page-wrapper" style="height:100vh;">
+  <div class="col-md-5 card-container"s>
+    <h3>
+      Enter registration code
+    </h3>
+    <div class="col-md-12">
+      <h4>
+        Kindly enter 6 digit pin sent to your email or sms
+        <br> and pay Ksh. 400 to Phone Number +254 722 364251 for account activation .
+      </h4>
+    </div>
+
+    <form [formGroup]="otpForm" (submit)="confirmCode()">
+      <div class="form-group" style="padding-top:30px;">
+        <label>
+          <input type="text" placeholder="6 digit Pin Required" formControlName="otp" class="form-control" />
+        </label>
+        <div class="messages text-danger" *ngIf="otpForm.controls.otp.errors?.required && otpForm.controls.otp.touched">PIN shouldn't be blank</div>
+
+      </div>
+      <div class="col-md-12">
+        <h4>
+          If E-mail not received check spam folder.
+        </h4>
+      </div>
+      <label>
+        <input type="submit" value="Submit PIN" class="form-control" />
+      </label>
+
+
+
+
+
+
+
+
+    </form>
+
+
+  </div>
+</div>

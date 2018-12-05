@@ -1,0 +1,38 @@
+<div id="page-wrapper" style="height:100vh;">
+  <div class="col-md-5 card-container" style="height:75%;">
+    <h3>
+      Password Reset
+    </h3>
+    <div class="col-md-12">
+      <h4>
+        Kindly enter New Password
+      </h4>
+
+      <form [formGroup]="passForm" (submit)="resetRequest()">
+        <div class="form-group" style="padding-top:30px;">
+          <label>
+            <input type=password placeholder="New Password" formControlName="password" class="form-control" />
+          </label>
+          <div class="messages text-danger" *ngIf="passForm.controls.password.errors?.required && passForm.controls.password.touched">Password shouldn't be blank</div>
+        </div>
+        <div class="form-group" style="padding-top:30px;">
+          <label>
+            <input type="password" placeholder="Confirm Password" formControlName="c_password" class="form-control" />
+          </label>
+          <div class="messages text-danger" *ngIf="passForm.controls.password.errors?.required && passForm.controls.c_password.touched">Password shouldn't be blank</div>
+
+
+
+        </div>
+
+        <label>
+          <input type="submit" value="Submit" class="form-control" />
+        </label>
+      </form>
+
+
+    </div>
+
+
+  </div>
+</div>

@@ -17,7 +17,7 @@ declare var $: any;
   styleUrls: ['./homepage.component.scss',
   '../../../node_modules/video.js/dist/video-js.css',
   ],
-  encapsulation: ViewEncapsulation.None
+  
   // providers: [
   //   { provide: CarouselConfig, useValue: { interval: 3000, noPause: true, showIndicators: true } }
   // ]
@@ -44,11 +44,19 @@ export class HomepageComponent implements OnInit{
 
   }
   ngOnInit() { 
-    
+    this.checkLogin();
     this.getAllMedia();
     
   }
-  
+
+  checkLogin(){
+    console.log(localStorage.getItem('user_name'));
+    if(!localStorage.getItem('user_name')){
+      this.nav.navigate(['register']);
+      
+    }
+    
+  }
   getNewReleases() {
 
   }
@@ -73,7 +81,7 @@ export class HomepageComponent implements OnInit{
     this.overlayOpen = true;
     console.log(media_id);
     var user_id = localStorage.getItem('user_id');
-    this.video_url = "http://localhost:8000/api/video/"+ media_id;
+    this.video_url = "http://www.jaluotv.com/server/api/video/"+ media_id;
     var progress_details = {
       'movie_Id': this.media_id,
       'user_id': user_id 
@@ -113,7 +121,7 @@ export class HomepageComponent implements OnInit{
     console.log("this one ran");
      
   }
-  closeInfoOverlay() {
+  closeInfoOverlay() {  
     var video = <HTMLVideoElement>document.getElementById('singleVideo');
     
     var time = video.currentTime;

@@ -1,0 +1,256 @@
+<ion-header>
+  <ion-navbar>
+    <ion-grid>
+
+      <ion-row>
+       
+          <ion-col>
+
+            <ion-title class="header-title">
+              <h3>
+                Home
+              </h3>
+            </ion-title>
+          </ion-col>
+          <ion-col>
+            <div class="navbar-buttons" >
+              <a (click)="logoutConfirm()"> 
+                <h3 class="icon">
+                  <ion-icon name="exit"></ion-icon>
+                </h3>
+              </a>
+            </div>
+            </ion-col>
+ 
+
+      </ion-row>
+
+
+    </ion-grid>
+
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-slides autoplay="3000" loop="true" speed="500" pager="true">
+    <ion-slide class="carousel-slide">
+      <div class="movie-card-slider">
+        <div class="color-overlay">
+          <div class="movie-share">
+            <a class="movie-share__icon" href="#">
+              <i class="material-icons"></i>
+            </a>
+            <a class="movie-share__icon" href="#">
+              <i class="material-icons"></i>
+            </a>
+            <a class="movie-share__icon" href="#">
+              <i class="material-icons"></i>
+            </a>
+          </div>
+          <div class="movie-content-slider">
+            <div class="movie-header">
+              <h1 class="movie-title">Blade Runner</h1>
+              <h4 class="movie-info">(1982) Sci-Fi, Thriller</h4>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </ion-slide>
+
+
+    <ion-slide class="carousel-slide">
+      <div class="movie-card-slider">
+        <div class="color-overlay">
+          <div class="movie-share">
+            <a class="movie-share__icon" href="#">
+              <i class="material-icons"></i>
+            </a>
+            <a class="movie-share__icon" href="#">
+              <i class="material-icons"></i>
+            </a>
+            <a class="movie-share__icon" href="#">
+              <i class="material-icons"></i>
+            </a>
+          </div>
+          <div class="movie-content-slider">
+            <div class="movie-header">
+              <h1 class="movie-title">Blade Runner</h1>
+              <h4 class="movie-info">(1982) Sci-Fi, Thriller</h4>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </ion-slide>
+    <ion-slide id="swiper">
+      <div class="movie-card-slider">
+        <div class="color-overlay">
+          <div class="movie-share">
+            <a class="movie-share__icon" href="#">
+              <i class="material-icons"></i>
+            </a>
+            <a class="movie-share__icon" href="#">
+              <i class="material-icons"></i>
+            </a>
+            <a class="movie-share__icon" href="#">
+              <i class="material-icons"></i>
+            </a>
+          </div>
+          <div class="movie-content-slider">
+            <div class="movie-header">
+              <h1 class="movie-title">Blade Runner</h1>
+              <h4 class="movie-info">(1982) Sci-Fi, Thriller</h4>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </ion-slide>
+  </ion-slides>
+  <div id="movie-card-list">
+    <!-- Card 1: Blade Runner -->
+    <div class="container">
+      <ion-grid>
+        <ion-row>
+          <div class="col genre-title">
+            <h4>
+              POPULAR
+            </h4>
+          </div>
+
+          <div class="col col-30" style="float:right">
+            <p class="show-all">SHOW ALL</p>
+          </div>
+        </ion-row>
+
+      </ion-grid>
+
+      <ion-slides slidesPerView="1.5" spaceBetween="10">
+        <ion-slide>
+
+          <div class="movie-card">
+            <div class="color-overlay">
+              <div class="movie-share">
+                <a class="movie-share__icon" href="#">
+                  <i class="material-icons"></i>
+                </a>
+                <a class="movie-share__icon" href="#">
+                  <i class="material-icons"></i>
+                </a>
+                <a class="movie-share__icon" href="#">
+                  <i class="material-icons"></i>
+                </a>
+              </div>
+              <div class="movie-content">
+                <div class="movie-header">
+                  <h1 class="movie-title">Blade Runner</h1>
+                  <h4 class="movie-info">(1982) Sci-Fi, Thriller</h4>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </ion-slide>
+
+        <!-- Card 2: Back to the Future -->
+        <ion-slide>
+
+          <div class="movie-card">
+            <div class="color-overlay">
+              <div class="movie-share">
+                <a class="movie-share__icon" href="#">
+                  <i class="material-icons"></i>
+                </a>
+                <a class="movie-share__icon" href="#">
+                  <i class="material-icons"></i>
+                </a>
+                <a class="movie-share__icon" href="#">
+                  <i class="material-icons"></i>
+                </a>
+              </div>
+              <div class="movie-content">
+                <div class="movie-header">
+                  <h1 class="movie-title">Blade Runner</h1>
+                  <h4 class="movie-info">(1982) Sci-Fi, Thriller</h4>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </ion-slide>
+
+        <!-- Card 3: Akira -->
+        <ion-slide>
+
+          <div class="movie-card">
+            <div class="color-overlay">
+              <div class="movie-share">
+                <a class="movie-share__icon" href="#">
+                  <i class="material-icons"></i>
+                </a>
+                <a class="movie-share__icon" href="#">
+                  <i class="material-icons"></i>
+                </a>
+                <a class="movie-share__icon" href="#">
+                  <i class="material-icons"></i>
+                </a>
+              </div>
+              <div class="movie-content">
+                <div class="movie-header">
+                  <h1 class="movie-title">Blade Runner</h1>
+                  <h4 class="movie-info">(1982) Sci-Fi, Thriller</h4>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+
+  </div>
+  <div class="info-overlay-image" style="height:100%;">
+    <!-- <vg-player> -->
+        <!-- <vg-overlay-play></vg-overlay-play>
+        <vg-controls>
+            
+            <vg-play-pause></vg-play-pause>
+            
+      
+            <vg-time-display vgProperty="current" vgFormat="hh:mm:ss"></vg-time-display>
+      
+            <vg-scrub-bar>
+                <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+            </vg-scrub-bar>
+      
+            <vg-time-display vgProperty="total" vgFormat="hh:mm:ss"></vg-time-display>
+      
+            <vg-mute></vg-mute>
+            <vg-volume></vg-volume>
+      
+            <vg-fullscreen></vg-fullscreen>
+        </vg-controls>
+       -->
+        <video controls id="singleVideo"  crossorigin style="height:100px;width:100%">
+
+            <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4" />
+          </video>
+     <!-- </vg-player> -->
+  
+
+  <!-- <script src="//vjs.zencdn.net/4.12/video.js"></script> -->
+</div>
+
+</ion-content>
